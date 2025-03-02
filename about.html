@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LED Mağazası</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <style>
+.container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-top: -300px;
+            padding-bottom: 300px;
+            color: rgb(255, 255, 255);
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .about-header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .about-header p {
+            font-size: 1.2em;
+        }
+
+
+        .about-text {
+            line-height: 1.6;
+            color: #333;
+            margin-right: 150px;
+        }
+
+
+        .info-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            color: #666;
+            line-height: 1.4;
+        }
+
+
+        .about-content {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    padding: 50px 0;
+    
+}
+
+.lamp-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+
+
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.lamp {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    
+}
+
+.lamp__wire {
+  height: 33vh;
+  width: 1px;
+  background-color: rgb(0, 0, 0);
+}
+.lamp__wire::after {
+  content: "";
+  position: absolute;
+  height: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-radius: 3px;
+  width: 30px;
+  border-bottom: 15px solid rgb(0, 0, 0);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lamp__bulb {
+  position: absolute;
+  top: calc(100% + 30px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 1px solid rgb(149, 12, 12);
+  height: 80px;
+  width: 80px;
+  z-index: -1;
+  background-color: black;
+}
+.lamp__bulb::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-left-radius: 53px 115px;
+  border-top-right-radius: 53px 115px;
+  border: 1px solid white;
+  border-top: 1px solid white;
+  border-bottom: none;
+  height: 25px;
+  width: 38px;
+  background-color: inherit;
+}
+.lamp__bulb__filament {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lamp__bulb__filament__base {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15px;
+  height: 30px;
+  border: 1px solid white;
+  border-bottom-right-radius: 10px 40px;
+  border-bottom-left-radius: 10px 40px;
+  transform: translateX(-50%);
+}
+.lamp__bulb__filament__base::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 40px;
+  width: 1px;
+  top: 20px;
+  left: -4px;
+  background-color: white;
+  transform: rotate(12deg);
+}
+.lamp__bulb__filament__base::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 40px;
+  width: 1px;
+  top: 20px;
+  right: -4px;
+  background-color: white;
+  transform: rotate(-12deg);
+}
+.lamp__bulb__filament__tungsten {
+  position: absolute;
+  top: 54px;
+  left: -18px;
+}
+.lamp__bulb__filament__tungsten__winding {
+  position: absolute;
+  height: 10px;
+  width: 6px;
+  border-radius: 40px;
+  border: 1px solid white;
+}
+.lamp__bulb__filament__tungsten__winding--1 {
+  left: 3px;
+}
+.lamp__bulb__filament__tungsten__winding--2 {
+  left: 6px;
+}
+.lamp__bulb__filament__tungsten__winding--3 {
+  left: 9px;
+}
+.lamp__bulb__filament__tungsten__winding--4 {
+  left: 12px;
+}
+.lamp__bulb__filament__tungsten__winding--5 {
+  left: 15px;
+}
+.lamp__bulb__filament__tungsten__winding--6 {
+  left: 18px;
+}
+.lamp__bulb__filament__tungsten__winding--7 {
+  left: 21px;
+}
+.lamp__bulb__filament__tungsten__winding--8 {
+  left: 24px;
+}
+.lamp__bulb__filament__tungsten__winding--9 {
+  left: 27px;
+}
+.lamp.is-on .lamp__bulb {
+  background-color: white;
+  box-shadow: 0px 0px rgba(255, 255, 100, 0.5), 0px 0px 10px 10px #ffb764, 0px 0px 20px 20px #ffb464, 0px 0px 30px 30px #ffbc64, 0px 0px 40px 40px #ffc164, 0px 0px 50px 50px #ffb964, 0px 0px 60px 60px #ff9d64, 0px 0px 70px 70px #ffa564, 0px 0px 80px 80px #ffa764, 0px 0px 90px 90px #ffa264, 0px 0px 100px 100px #ffac64, 0px 0px 110px 110px #ffb464, 0px 0px 120px 120px #ffaa64, 0px 0px 130px 130px #ffb764, 0px 0px 140px 140px #ffb964, 0px 0px 150px 150px #ffb764, 0px 0px 160px 160px #ffc464, 0px 0px 170px 170px #ffbc64, 0px 0px 180px 180px #ffb464, 0px 0px 190px 190px #ffaf64, 0px 0px 200px 200px #ff9d64;
+}
+.lamp.is-on + .instruction span:nth-child(1) {
+  text-shadow: 0px 0px black, -0.5px 1px black, -1px 2px black, -1.5px 3px black, -2px 4px black, -2.5px 5px black, -3px 6px black, -3.5px 7px black, -4px 8px black, -4.5px 9px black, -5px 10px black, -5.5px 11px black, -6px 12px black, -6.5px 13px black, -7px 14px black, -7.5px 15px black, -8px 16px black, -8.5px 17px black, -9px 18px black, -9.5px 19px black, -10px 20px black, -10.5px 21px black, -11px 22px black, -11.5px 23px black, -12px 24px black, -12.5px 25px black, -13px 26px black, -13.5px 27px black, -14px 28px black, -14.5px 29px black, -15px 30px black, -15.5px 31px black, -16px 32px black, -16.5px 33px black, -17px 34px black, -17.5px 35px black;
+}
+.lamp.is-on + .instruction span:nth-child(2) {
+  text-shadow: 0px 0px black, -0.3px 1px black, -0.6px 2px black, -0.9px 3px black, -1.2px 4px black, -1.5px 5px black, -1.8px 6px black, -2.1px 7px black, -2.4px 8px black, -2.7px 9px black, -3px 10px black, -3.3px 11px black, -3.6px 12px black, -3.9px 13px black, -4.2px 14px black, -4.5px 15px black, -4.8px 16px black, -5.1px 17px black, -5.4px 18px black, -5.7px 19px black, -6px 20px black, -6.3px 21px black, -6.6px 22px black, -6.9px 23px black, -7.2px 24px black, -7.5px 25px black, -7.8px 26px black, -8.1px 27px black, -8.4px 28px black, -8.7px 29px black, -9px 30px black, -9.3px 31px black, -9.6px 32px black, -9.9px 33px black, -10.2px 34px black, -10.5px 35px black;
+}
+.lamp.is-on + .instruction span:nth-child(3) {
+  text-shadow: 0px 0px black, -0.1px 1px black, -0.2px 2px black, -0.3px 3px black, -0.4px 4px black, -0.5px 5px black, -0.6px 6px black, -0.7px 7px black, -0.8px 8px black, -0.9px 9px black, -1px 10px black, -1.1px 11px black, -1.2px 12px black, -1.3px 13px black, -1.4px 14px black, -1.5px 15px black, -1.6px 16px black, -1.7px 17px black, -1.8px 18px black, -1.9px 19px black, -2px 20px black, -2.1px 21px black, -2.2px 22px black, -2.3px 23px black, -2.4px 24px black, -2.5px 25px black, -2.6px 26px black, -2.7px 27px black, -2.8px 28px black, -2.9px 29px black, -3px 30px black, -3.1px 31px black, -3.2px 32px black, -3.3px 33px black, -3.4px 34px black, -3.5px 35px black;
+}
+.lamp.is-on + .instruction span:nth-child(4) {
+  text-shadow: 0px 0px black, 0.12px 1px black, 0.24px 2px black, 0.36px 3px black, 0.48px 4px black, 0.6px 5px black, 0.72px 6px black, 0.84px 7px black, 0.96px 8px black, 1.08px 9px black, 1.2px 10px black, 1.32px 11px black, 1.44px 12px black, 1.56px 13px black, 1.68px 14px black, 1.8px 15px black, 1.92px 16px black, 2.04px 17px black, 2.16px 18px black, 2.28px 19px black, 2.4px 20px black, 2.52px 21px black, 2.64px 22px black, 2.76px 23px black, 2.88px 24px black, 3px 25px black, 3.12px 26px black, 3.24px 27px black, 3.36px 28px black, 3.48px 29px black, 3.6px 30px black, 3.72px 31px black, 3.84px 32px black, 3.96px 33px black, 4.08px 34px black, 4.2px 35px black;
+}
+.lamp.is-on + .instruction span:nth-child(5) {
+  text-shadow: 0px 0px black, 0.45px 1px black, 0.9px 2px black, 1.35px 3px black, 1.8px 4px black, 2.25px 5px black, 2.7px 6px black, 3.15px 7px black, 3.6px 8px black, 4.05px 9px black, 4.5px 10px black, 4.95px 11px black, 5.4px 12px black, 5.85px 13px black, 6.3px 14px black, 6.75px 15px black, 7.2px 16px black, 7.65px 17px black, 8.1px 18px black, 8.55px 19px black, 9px 20px black, 9.45px 21px black, 9.9px 22px black, 10.35px 23px black, 10.8px 24px black, 11.25px 25px black, 11.7px 26px black, 12.15px 27px black, 12.6px 28px black, 13.05px 29px black, 13.5px 30px black, 13.95px 31px black, 14.4px 32px black, 14.85px 33px black, 15.3px 34px black, 15.75px 35px black;
+}
+.lamp.is-on + .instruction span:nth-child(6) {
+  text-shadow: 0px 0px black, 0.62px 1px black, 1.24px 2px black, 1.86px 3px black, 2.48px 4px black, 3.1px 5px black, 3.72px 6px black, 4.34px 7px black, 4.96px 8px black, 5.58px 9px black, 6.2px 10px black, 6.82px 11px black, 7.44px 12px black, 8.06px 13px black, 8.68px 14px black, 9.3px 15px black, 9.92px 16px black, 10.54px 17px black, 11.16px 18px black, 11.78px 19px black, 12.4px 20px black, 13.02px 21px black, 13.64px 22px black, 14.26px 23px black, 14.88px 24px black, 15.5px 25px black, 16.12px 26px black, 16.74px 27px black, 17.36px 28px black, 17.98px 29px black, 18.6px 30px black, 19.22px 31px black, 19.84px 32px black, 20.46px 33px black, 21.08px 34px black, 21.7px 35px black;
+}
+
+.instruction {
+  position: absolute;
+  left: 50%;
+  top: calc(33vh + 150px);
+  font-size: 160px;
+  color: white;
+  font-family: "Playfair Display", serif;
+  transform: translateX(-50%);
+  z-index: 9000;
+  user-select: none;
+}
+.instruction span {
+  position: relative;
+}
+.instruction span:nth-child(1) {
+  position: relative;
+  z-index: 5;
+}
+.instruction span:nth-child(2) {
+  position: relative;
+  z-index: 4;
+}
+.instruction span:nth-child(3) {
+  position: relative;
+  z-index: 3;
+}
+.instruction span:nth-child(4) {
+  position: relative;
+  z-index: 2;
+}
+.instruction span:nth-child(5) {
+  position: relative;
+  z-index: 1;
+}
+.instruction span:nth-child(6) {
+  position: relative;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .lamp-container {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 30px;
+    }
+
+    #canvas {
+        width: 100%;
+        height: 300px;
+    }
+
+    .lamp {
+        position: absolute;
+        top: 50%;
+        margin-top: -200px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0; /* Canvasın arkasında görünmesi için z-index'i düşürüyoruz */
+    }
+
+    .about-text {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+      </style>
+    </head>
+<body>
+    <div id="header"></div>
+
+    <main>
+
+<section >
+
+    <canvas id="canvas" style="height: 500px;width:100%;"></canvas>
+</section>
+
+       
+
+<section class="about">
+    <div class="container">
+        <div class="about-header">
+            <h1>Hakkımızda</h1>
+            <p>Kalitemiz ve misyonumuz hakkında daha fazla bilgi edinin.</p>
+        </div>
+        
+        <div class="about-content">
+            <div class="lamp-container">
+                <canvas id="canvas"></canvas>
+                <div class="lamp">
+                    <div class="lamp__wire"></div>
+                    <div class="lamp__bulb">
+                        <div class="lamp__bulb__filament">
+                            <div class="lamp__bulb__filament__base"></div>
+                            <div class="lamp__bulb__filament__tungsten">
+                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--1"></div>
+                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--2"></div>
+                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--3"></div>
+                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--4"></div>
+                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--5"></div>
+                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--6"></div>
+                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--7"></div>
+                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--8"></div>
+                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--9"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-text">
+                <p>1999 yılında kurulan şirketimiz, sektöründe lider konumda yer almaktadır. Müşteri memnuniyetini her zaman ön planda tutan bir anlayışla, kaliteli hizmet sunmanın gururunu yaşıyoruz.</p>
+                <br>
+                <p>İnovasyon ve teknolojinin gücü, bizim için her zaman önceliklidir. Uzman ekibimiz ile birlikte, her bir müşterimizin ihtiyaçlarını karşılayacak özel çözümler geliştiriyoruz.</p>
+                <br>
+                <p>Amacımız, global standartlarda hizmet sunarak, sektörde iz bırakan bir marka olmak. Bu yolda, siz değerli müşterilerimizin desteğiyle daha ileri gitmek için çalışıyoruz.</p>
+        
+                <div class="info-box">
+                    <h2>Neler Yapıyoruz?</h2>
+                    <p>Yüksek kalite standartları, müşteri odaklı hizmet, inovatif çözümler ve profesyonel ekip.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <div id="footer"></div>
+
+    </main>
+    <script>
+        // Header'ı yükle
+        fetch('header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header').innerHTML = html;
+            });
+
+        // Footer'ı yükle
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer').innerHTML = html;
+            });
+    </script>
+        <script src="js/script.js"></script>
+<script>
+    const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+// Set canvas size
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+// Node class for circuit points
+class Node {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.connections = [];
+        this.pulses = [];
+        this.size = 4;
+        this.glowIntensity = 0;
+    }
+
+    addConnection(node) {
+        if (!this.connections.includes(node)) {
+            this.connections.push(node);
+        }
+    }
+
+    createPulse() {
+        if (Math.random() < 0.02 && this.connections.length > 0) {
+            const targetNode = this.connections[Math.floor(Math.random() * this.connections.length)];
+            this.pulses.push({
+                target: targetNode,
+                progress: 0,
+                speed: 0.02
+            });
+        }
+    }
+
+    update() {
+        // Update pulses
+        for (let i = this.pulses.length - 1; i >= 0; i--) {
+            const pulse = this.pulses[i];
+            pulse.progress += pulse.speed;
+            
+            if (pulse.progress >= 1) {
+                pulse.target.glowIntensity = 1;
+                this.pulses.splice(i, 1);
+            }
+        }
+
+        // Update glow
+        if (this.glowIntensity > 0) {
+            this.glowIntensity -= 0.05;
+        }
+    }
+
+    draw() {
+        // Draw connections
+        ctx.strokeStyle = '#1e3a8a';
+        ctx.lineWidth = 1;
+        this.connections.forEach(node => {
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y);
+            ctx.lineTo(node.x, node.y);
+            ctx.stroke();
+        });
+
+        // Draw pulses
+        this.pulses.forEach(pulse => {
+            const targetX = pulse.target.x;
+            const targetY = pulse.target.y;
+            const pulseX = this.x + (targetX - this.x) * pulse.progress;
+            const pulseY = this.y + (targetY - this.y) * pulse.progress;
+
+            ctx.beginPath();
+            ctx.arc(pulseX, pulseY, 3, 0, Math.PI * 2);
+            ctx.fillStyle = '#60a5fa';
+            ctx.fill();
+        });
+
+        // Draw node with glow
+        const gradient = ctx.createRadialGradient(
+            this.x, this.y, 0,
+            this.x, this.y, this.size * 4
+        );
+        gradient.addColorStop(0, `rgba(96, 165, 250, ${this.glowIntensity})`);
+        gradient.addColorStop(1, 'rgba(96, 165, 250, 0)');
+        
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size * 4, 0, Math.PI * 2);
+        ctx.fillStyle = gradient;
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = '#60a5fa';
+        ctx.fill();
+    }
+}
+
+// Create grid of nodes
+const nodes = [];
+const gridSize = 50;
+const cols = Math.ceil(canvas.width / gridSize);
+const rows = Math.ceil(canvas.height / gridSize);
+
+for (let i = 0; i < cols; i++) {
+    for (let j = 0; j < rows; j++) {
+        if (Math.random() < 0.5) {
+            const x = i * gridSize + Math.random() * 20 - 10;
+            const y = j * gridSize + Math.random() * 20 - 10;
+            nodes.push(new Node(x, y));
+        }
+    }
+}
+
+// Create connections
+nodes.forEach(node => {
+    nodes.forEach(otherNode => {
+        if (node !== otherNode) {
+            const dx = node.x - otherNode.x;
+            const dy = node.y - otherNode.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < gridSize * 1.5) {
+                node.addConnection(otherNode);
+            }
+        }
+    });
+});
+
+// Animation loop
+function animate() {
+    ctx.fillStyle = '#0a192f';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    nodes.forEach(node => {
+        node.createPulse();
+        node.update();
+        node.draw();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+// Mouse interaction
+let mouseNode = null;
+canvas.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    nodes.forEach(node => {
+        const dx = node.x - x;
+        const dy = node.y - y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < 50) {
+            node.glowIntensity = 1;
+            mouseNode = node;
+        }
+    });
+});
+
+window.onload = function(){
+
+const lamp = document.getElementsByClassName('lamp')[0];
+
+window.addEventListener('click', function(){
+    lamp.classList.toggle('is-on');
+});
+
+};
+</script>
+</body>
+</html>

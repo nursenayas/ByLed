@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LED Mağazası</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+    
+<body>
+    <div id="header"></div>
+
+    <main>
+        <section class="contact">
+            <h2>Bize Ulaşın</h2>
+            <p>Email: info@ledmagazasi.com</p>
+            <p>Telefon: +90 555 123 45 67</p>
+        </section>
+
+        <div id="footer"></div>
+
+    </main>
+    <script>
+        // Header'ı yükle
+        fetch('header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header').innerHTML = html;
+            });
+
+        // Footer'ı yükle
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer').innerHTML = html;
+            });
+    </script>
+</body>
+</html>
