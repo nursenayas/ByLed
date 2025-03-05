@@ -67,7 +67,7 @@
     
 }
 
-.lamp-container {
+.lamp-container_about {
     position: relative;
     width: 300px;
     height: 300px;
@@ -82,7 +82,7 @@
     margin-top: 20px;
 }
 
-.lamp {
+.lamp_about {
     position: absolute;
     top: 50%;
     left: 70%;
@@ -91,12 +91,12 @@
     
 }
 
-.lamp__wire {
+.lamp__wire_about {
   height: 33vh;
   width: 1px;
   background-color: rgb(0, 0, 0);
 }
-.lamp__wire::after {
+.lamp__wire_about::after {
   content: "";
   position: absolute;
   height: 0;
@@ -111,19 +111,19 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.lamp__bulb {
+.lamp__bulb_about {
   position: absolute;
   top: calc(100% + 30px);
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
-  border: 1px solid rgb(149, 12, 12);
+  border: 1px solid rgb(1, 1, 1);
   height: 80px;
   width: 80px;
   z-index: -1;
   background-color: black;
 }
-.lamp__bulb::before {
+.lamp__bulb_about::before {
   content: "";
   position: absolute;
   top: -20px;
@@ -131,20 +131,20 @@
   transform: translateX(-50%);
   border-top-left-radius: 53px 115px;
   border-top-right-radius: 53px 115px;
-  border: 1px solid white;
+  border: 1px solid rgb(1, 1, 1);
   border-top: 1px solid white;
   border-bottom: none;
   height: 25px;
   width: 38px;
   background-color: inherit;
 }
-.lamp__bulb__filament {
+.lamp__bulb_about__filament {
   position: absolute;
   top: -16px;
   left: 50%;
   transform: translateX(-50%);
 }
-.lamp__bulb__filament__base {
+.lamp__bulb_about__filament__base {
   position: absolute;
   top: 0;
   left: 50%;
@@ -155,7 +155,7 @@
   border-bottom-left-radius: 10px 40px;
   transform: translateX(-50%);
 }
-.lamp__bulb__filament__base::before {
+.lamp__bulb_about__filament__base::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -166,7 +166,7 @@
   background-color: white;
   transform: rotate(12deg);
 }
-.lamp__bulb__filament__base::after {
+.lamp__bulb_about__filament__base::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -177,65 +177,65 @@
   background-color: white;
   transform: rotate(-12deg);
 }
-.lamp__bulb__filament__tungsten {
+.lamp__bulb_about__filament__tungsten {
   position: absolute;
   top: 54px;
   left: -18px;
 }
-.lamp__bulb__filament__tungsten__winding {
+.lamp__bulb_about__filament__tungsten__winding {
   position: absolute;
   height: 10px;
   width: 6px;
   border-radius: 40px;
   border: 1px solid white;
 }
-.lamp__bulb__filament__tungsten__winding--1 {
+.lamp__bulb_about__filament__tungsten__winding--1 {
   left: 3px;
 }
-.lamp__bulb__filament__tungsten__winding--2 {
+.lamp__bulb_about__filament__tungsten__winding--2 {
   left: 6px;
 }
-.lamp__bulb__filament__tungsten__winding--3 {
+.lamp__bulb_about__filament__tungsten__winding--3 {
   left: 9px;
 }
-.lamp__bulb__filament__tungsten__winding--4 {
+.lamp__bulb_about__filament__tungsten__winding--4 {
   left: 12px;
 }
-.lamp__bulb__filament__tungsten__winding--5 {
+.lamp__bulb_about__filament__tungsten__winding--5 {
   left: 15px;
 }
-.lamp__bulb__filament__tungsten__winding--6 {
+.lamp__bulb_about__filament__tungsten__winding--6 {
   left: 18px;
 }
-.lamp__bulb__filament__tungsten__winding--7 {
+.lamp__bulb_about__filament__tungsten__winding--7 {
   left: 21px;
 }
-.lamp__bulb__filament__tungsten__winding--8 {
+.lamp__bulb_about__filament__tungsten__winding--8 {
   left: 24px;
 }
-.lamp__bulb__filament__tungsten__winding--9 {
+.lamp__bulb_about__filament__tungsten__winding--9 {
   left: 27px;
 }
-.lamp.is-on .lamp__bulb {
-  background-color: white;
-  box-shadow: 0px 0px rgba(255, 255, 100, 0.5), 0px 0px 10px 10px #ffb764, 0px 0px 20px 20px #ffb464, 0px 0px 30px 30px #ffbc64, 0px 0px 40px 40px #ffc164, 0px 0px 50px 50px #ffb964, 0px 0px 60px 60px #ff9d64, 0px 0px 70px 70px #ffa564, 0px 0px 80px 80px #ffa764, 0px 0px 90px 90px #ffa264, 0px 0px 100px 100px #ffac64, 0px 0px 110px 110px #ffb464, 0px 0px 120px 120px #ffaa64, 0px 0px 130px 130px #ffb764, 0px 0px 140px 140px #ffb964, 0px 0px 150px 150px #ffb764, 0px 0px 160px 160px #ffc464, 0px 0px 170px 170px #ffbc64, 0px 0px 180px 180px #ffb464, 0px 0px 190px 190px #ffaf64, 0px 0px 200px 200px #ff9d64;
+.lamp_about.is-on .lamp__bulb_about {
+  background-color: rgb(246, 223, 12);
+  box-shadow: 0px 0px rgba(246, 223, 12, 0.9), 0px 0px 10px 10px rgb(246, 223, 12), 0px 0px 20px 20px rgb(246, 223, 12), 0px 0px 30px 30px rgb(246, 223, 12), 0px 0px 40px 40px rgb(246, 223, 12), 0px 0px 50px 50px rgb(246, 223, 12), 0px 0px 60px 60px rgb(246, 223, 12), 0px 0px 70px 70px rgb(246, 223, 12), 0px 0px 80px 80px rgb(246, 223, 12), 0px 0px 90px 90px rgb(246, 223, 12), 0px 0px 100px 100px rgb(246, 223, 12), 0px 0px 110px 110px rgb(246, 223, 12), 0px 0px 120px 120px rgb(246, 223, 12), 0px 0px 130px 130px rgb(246, 223, 12), 0px 0px 140px 140px rgb(246, 223, 12);
 }
-.lamp.is-on + .instruction span:nth-child(1) {
+.lamp_about.is-on + .instruction span:nth-child(1) {
   text-shadow: 0px 0px black, -0.5px 1px black, -1px 2px black, -1.5px 3px black, -2px 4px black, -2.5px 5px black, -3px 6px black, -3.5px 7px black, -4px 8px black, -4.5px 9px black, -5px 10px black, -5.5px 11px black, -6px 12px black, -6.5px 13px black, -7px 14px black, -7.5px 15px black, -8px 16px black, -8.5px 17px black, -9px 18px black, -9.5px 19px black, -10px 20px black, -10.5px 21px black, -11px 22px black, -11.5px 23px black, -12px 24px black, -12.5px 25px black, -13px 26px black, -13.5px 27px black, -14px 28px black, -14.5px 29px black, -15px 30px black, -15.5px 31px black, -16px 32px black, -16.5px 33px black, -17px 34px black, -17.5px 35px black;
 }
-.lamp.is-on + .instruction span:nth-child(2) {
+.lamp_about.is-on + .instruction span:nth-child(2) {
   text-shadow: 0px 0px black, -0.3px 1px black, -0.6px 2px black, -0.9px 3px black, -1.2px 4px black, -1.5px 5px black, -1.8px 6px black, -2.1px 7px black, -2.4px 8px black, -2.7px 9px black, -3px 10px black, -3.3px 11px black, -3.6px 12px black, -3.9px 13px black, -4.2px 14px black, -4.5px 15px black, -4.8px 16px black, -5.1px 17px black, -5.4px 18px black, -5.7px 19px black, -6px 20px black, -6.3px 21px black, -6.6px 22px black, -6.9px 23px black, -7.2px 24px black, -7.5px 25px black, -7.8px 26px black, -8.1px 27px black, -8.4px 28px black, -8.7px 29px black, -9px 30px black, -9.3px 31px black, -9.6px 32px black, -9.9px 33px black, -10.2px 34px black, -10.5px 35px black;
 }
-.lamp.is-on + .instruction span:nth-child(3) {
+.lamp_about.is-on + .instruction span:nth-child(3) {
   text-shadow: 0px 0px black, -0.1px 1px black, -0.2px 2px black, -0.3px 3px black, -0.4px 4px black, -0.5px 5px black, -0.6px 6px black, -0.7px 7px black, -0.8px 8px black, -0.9px 9px black, -1px 10px black, -1.1px 11px black, -1.2px 12px black, -1.3px 13px black, -1.4px 14px black, -1.5px 15px black, -1.6px 16px black, -1.7px 17px black, -1.8px 18px black, -1.9px 19px black, -2px 20px black, -2.1px 21px black, -2.2px 22px black, -2.3px 23px black, -2.4px 24px black, -2.5px 25px black, -2.6px 26px black, -2.7px 27px black, -2.8px 28px black, -2.9px 29px black, -3px 30px black, -3.1px 31px black, -3.2px 32px black, -3.3px 33px black, -3.4px 34px black, -3.5px 35px black;
 }
-.lamp.is-on + .instruction span:nth-child(4) {
+.lamp_about.is-on + .instruction span:nth-child(4) {
   text-shadow: 0px 0px black, 0.12px 1px black, 0.24px 2px black, 0.36px 3px black, 0.48px 4px black, 0.6px 5px black, 0.72px 6px black, 0.84px 7px black, 0.96px 8px black, 1.08px 9px black, 1.2px 10px black, 1.32px 11px black, 1.44px 12px black, 1.56px 13px black, 1.68px 14px black, 1.8px 15px black, 1.92px 16px black, 2.04px 17px black, 2.16px 18px black, 2.28px 19px black, 2.4px 20px black, 2.52px 21px black, 2.64px 22px black, 2.76px 23px black, 2.88px 24px black, 3px 25px black, 3.12px 26px black, 3.24px 27px black, 3.36px 28px black, 3.48px 29px black, 3.6px 30px black, 3.72px 31px black, 3.84px 32px black, 3.96px 33px black, 4.08px 34px black, 4.2px 35px black;
 }
-.lamp.is-on + .instruction span:nth-child(5) {
+.lamp_about.is-on + .instruction span:nth-child(5) {
   text-shadow: 0px 0px black, 0.45px 1px black, 0.9px 2px black, 1.35px 3px black, 1.8px 4px black, 2.25px 5px black, 2.7px 6px black, 3.15px 7px black, 3.6px 8px black, 4.05px 9px black, 4.5px 10px black, 4.95px 11px black, 5.4px 12px black, 5.85px 13px black, 6.3px 14px black, 6.75px 15px black, 7.2px 16px black, 7.65px 17px black, 8.1px 18px black, 8.55px 19px black, 9px 20px black, 9.45px 21px black, 9.9px 22px black, 10.35px 23px black, 10.8px 24px black, 11.25px 25px black, 11.7px 26px black, 12.15px 27px black, 12.6px 28px black, 13.05px 29px black, 13.5px 30px black, 13.95px 31px black, 14.4px 32px black, 14.85px 33px black, 15.3px 34px black, 15.75px 35px black;
 }
-.lamp.is-on + .instruction span:nth-child(6) {
+.lamp_about.is-on + .instruction span:nth-child(6) {
   text-shadow: 0px 0px black, 0.62px 1px black, 1.24px 2px black, 1.86px 3px black, 2.48px 4px black, 3.1px 5px black, 3.72px 6px black, 4.34px 7px black, 4.96px 8px black, 5.58px 9px black, 6.2px 10px black, 6.82px 11px black, 7.44px 12px black, 8.06px 13px black, 8.68px 14px black, 9.3px 15px black, 9.92px 16px black, 10.54px 17px black, 11.16px 18px black, 11.78px 19px black, 12.4px 20px black, 13.02px 21px black, 13.64px 22px black, 14.26px 23px black, 14.88px 24px black, 15.5px 25px black, 16.12px 26px black, 16.74px 27px black, 17.36px 28px black, 17.98px 29px black, 18.6px 30px black, 19.22px 31px black, 19.84px 32px black, 20.46px 33px black, 21.08px 34px black, 21.7px 35px black;
 }
 
@@ -284,7 +284,7 @@
         gap: 20px;
     }
 
-    .lamp-container {
+    .lamp-container_about {
         width: 100%;
         height: 300px;
         margin-bottom: 30px;
@@ -295,7 +295,7 @@
         height: 300px;
     }
 
-    .lamp {
+    .lamp_about {
         position: absolute;
         top: 50%;
         margin-top: -200px;
@@ -331,23 +331,23 @@
         </div>
         
         <div class="about-content">
-            <div class="lamp-container">
+            <div class="lamp-container_about">
                 <canvas id="canvas"></canvas>
-                <div class="lamp">
-                    <div class="lamp__wire"></div>
-                    <div class="lamp__bulb">
-                        <div class="lamp__bulb__filament">
-                            <div class="lamp__bulb__filament__base"></div>
-                            <div class="lamp__bulb__filament__tungsten">
-                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--1"></div>
-                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--2"></div>
-                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--3"></div>
-                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--4"></div>
-                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--5"></div>
-                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--6"></div>
-                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--7"></div>
-                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--8"></div>
-                                <div class="lamp__bulb__filament__tungsten__winding lamp__bulb__filament__tungsten__winding--9"></div>
+                <div class="lamp_about">
+                    <div class="lamp__wire_about"></div>
+                    <div class="lamp__bulb_about">
+                        <div class="lamp__bulb_about__filament">
+                            <div class="lamp__bulb_about__filament__base"></div>
+                            <div class="lamp__bulb_about__filament__tungsten">
+                                <div class="lamp__bulb_about__filament__tungsten__winding lamp__bulb_about__filament__tungsten__winding--1"></div>
+                                <div class="lamp__bulb_about__filament__tungsten__winding lamp__bulb_about__filament__tungsten__winding--2"></div>
+                                <div class="lamp__bulb_about__filament__tungsten__winding lamp__bulb_about__filament__tungsten__winding--3"></div>
+                                <div class="lamp__bulb_about__filament__tungsten__winding lamp__bulb_about__filament__tungsten__winding--4"></div>
+                                <div class="lamp__bulb_about__filament__tungsten__winding lamp__bulb_about__filament__tungsten__winding--5"></div>
+                                <div class="lamp__bulb_about__filament__tungsten__winding lamp__bulb_about__filament__tungsten__winding--6"></div>
+                                <div class="lamp__bulb_about__filament__tungsten__winding lamp__bulb_about__filament__tungsten__winding--7"></div>
+                                <div class="lamp__bulb_about__filament__tungsten__winding lamp__bulb_about__filament__tungsten__winding--8"></div>
+                                <div class="lamp__bulb_about__filament__tungsten__winding lamp__bulb_about__filament__tungsten__winding--9"></div>
                             </div>
                         </div>
                     </div>
@@ -557,7 +557,7 @@ canvas.addEventListener('mousemove', (event) => {
 
 window.onload = function(){
 
-const lamp = document.getElementsByClassName('lamp')[0];
+const lamp = document.getElementsByClassName('lamp_about')[0];
 
 window.addEventListener('click', function(){
     lamp.classList.toggle('is-on');
