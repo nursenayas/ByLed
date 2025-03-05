@@ -7,17 +7,163 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
-    
+    <style>
+        /* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+        
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+.contact-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+    margin-top: 90px;
+
+}
+
+.contact-info h3{
+    margin-bottom: 20px;
+}.social-media-box h3{
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-item i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #222;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.contact-info,
+.social-media-box {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    height: 90px;
+}
+
+
+
+.social-icons a {
+    color: #222;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #555;
+}
+
+.map-container {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.map-container {
+            width: 100%;
+            max-width: 2800px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+        }
+
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+    </style>
 <body>
     <div id="header"></div>
 
     <main>
-        <section class="contact">
-            <h2>Bize Ulaşın</h2>
-            <p>Email: info@ledmagazasi.com</p>
-            <p>Telefon: +90 555 123 45 67</p>
+   
+        <section class="contact-section">
+            <div class="container">
+                <h2>Bizimle İletişim Kurun</h2>
+                <div class="contact-container">
+                    <!-- İletişim Bilgileri -->
+                    <div class="contact-info">
+                        <h3>İletişim Bilgileri</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>LED Sokak, No: 123, İstanbul</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>Telefon: +90 555 123 4567</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>E-posta: info@ledsatis.com</p>
+                        </div>
+                    </div>
+                
+                    <!-- Sosyal Medya -->
+                    <div class="social-media-box">
+                        <h3>Sosyal Medya</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Konumumuz</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196.6718736286738!2d40.28350895421995!3d37.936270989601795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40751fbe7e19bee7%3A0x9c69e82a76a55478!2sCan%20Led%20Ayd%C4%B1nlatma!5e0!3m2!1str!2str!4v1741195741296!5m2!1str!2str" 
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </section>
-
         <div id="footer"></div>
 
     </main>
@@ -36,5 +182,6 @@
                 document.getElementById('footer').innerHTML = html;
             });
     </script>
+
 </body>
 </html>

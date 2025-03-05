@@ -5,342 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LED Mağazası</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slider.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
- 
- 
-    <style>
+<style>
+ .ps-section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
    
-  
-@import url("https://fonts.googleapis.com/css?family=Lora:700");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
-:root {
-  --z-distance: 8.519vw;
-  --from-left: 1;
-  --mobile-bkp: 650px;
+}
+
+.ps-section__header h3 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    font-family: Work Sans, sans-serif;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.ps-section__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ps-section__links li {
+    display: inline-block;
+}
+
+.view-all-btn {
+    color: rgb(9, 9, 9);
+    background-color: transparent;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    font-family: Work Sans, sans-serif;
+    font-weight: 400;
+}
+
+.view-all-btn:hover {
+    color: #edb10b;
 }
 
 
-.slider {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-}
-.slider::before, .slider::after {
-  content: '';
-  left: -1vw;
-  top: -1vh;
-  display: block;
-  position: absolute;
-  width: 102vw;
-  height: 102vh;
-  background-position: center;
-  background-size: cover;
-  will-change: opacity;
-  z-index: -1;
-  box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.7) inset;
-}
-.slider::before {
-  background-image: var(--img-prev);
-}
-.slider::after {
-  transition: opacity 0.7s;
-  opacity: 0;
-  background-image: var(--img-next);
-}
-.slider--bg-next::after {
-  opacity: 1;
-}
-.slider__content {
-  margin: auto;
-  width: 65vw;
-  height: 32.5vw;
-  max-height: 60vh;
-  will-change: transform;
-  transform-style: preserve-3d;
-  pointer-events: none;
-  transform: translateZ(var(--z-distance));
-}
-.slider__images {
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  box-shadow: 0 0 5em #000;
-}
-.slider__images-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  will-change: transform;
-  transition-timing-function: ease-in;
-  visibility: hidden;
-}
-.slider__images-item img {
-  display: block;
-  position: relative;
-  left: -1em;
-  top: -1em;
-  width: calc(100% + 1em * 2);
-  height: calc(100% + 1em * 2);
-  object-fit: cover;
-  will-change: transform;
-}
-.slider__images-item--active {
-  z-index: 20;
-  visibility: visible;
-}
-.slider__images-item--subactive {
-  z-index: 15;
-  visibility: visible;
-}
-.slider__images-item--next {
-  transform: translateX(100%);
-}
-.slider__images-item--prev {
-  transform: translateX(-100%);
-}
-.slider__images-item--transit {
-  transition: transform 0.7s, opacity 0.7s;
-}
-.slider__text {
-  position: relative;
-  height: 100%;
-}
-.slider__text-item {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 0.5em;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-}
-.slider__text-item > * {
-  overflow: hidden;
-  position: absolute;
-}
-.slider__text-item h3, .slider__text-item p {
-  transition: transform 0.35s ease-out;
-  line-height: 1.5;
-  overflow: hidden;
-}
-.slider__text-item h3 {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-.slider__text-item p {
-  font-family: 'Open Sans', sans-serif;
-  padding: 1em;
-  color: white;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.slider__text-item h3::before, .slider__text-item p::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 105%;
-  height: 100%;
-  transform: translateX(0);
-  transition: transform 0.35s ease-out 0.28s;
-}
-.slider__text-item h3::before {
-  background-color: #000;
-}
-.slider__text-item p::before {
-  background-color: #fff;
-}
-.slider__text-item h3 {
-  margin: 0;
-  font-size: 3.5em;
-  padding: 0 .3em;
-  position: relative;
-  font-weight: 700;
-  transform: translateX(-100%);
-}
-.slider__text-item p {
-  margin: 0;
-  transform: translateX(100%);
-}
-.slider__text-item-head {
-  top: -0.5em;
-  transform: translateZ(3em);
-}
-.slider__text-item-info {
-  bottom: 0;
-  right: 0;
-  max-width: 75%;
-  min-width: min-content;
-  transform: translateZ(2em);
-}
-.slider__text-item--active h3, .slider__text-item--active p {
-  transform: translateX(0);
-}
-.slider__text-item--active h3::before {
-  transform: translateX(102%);
-}
-.slider__text-item--active p::before {
-  transform: translateX(-102%);
-}
-.slider__text-item--backwards h3::before, .slider__text-item--backwards p::before {
-  transition: transform 0.35s ease-in;
-}
-.slider__text-item--backwards h3, .slider__text-item--backwards p {
-  transition: transform 0.35s ease-in 0.35s;
-}
-.slider__nav {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-.slider__nav-arrows {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.slider__nav-arrow {
-  height: 100vh;
-  width: 50vw;
-  text-indent: -9999px;
-  white-space: nowrap;
-}
-.slider__nav-arrow--left {
-  --arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 4 4'%3E %3Cpolyline points='3 1 1 2 3 3' stroke='white' stroke-width='.3' stroke-opacity='.5' fill='none'%3E%3C/polyline%3E %3C/svg%3E");
-  cursor: var(--arrow) 40 40, auto;
-}
-.slider__nav-arrow--right {
-  --arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 4 4'%3E %3Cpolyline points='1 1 3 2 1 3' stroke='white' stroke-width='.3' stroke-opacity='.5' fill='none'%3E%3C/polyline%3E %3C/svg%3E");
-  cursor: var(--arrow) 40 40, auto;
-}
-.slider__nav-dots {
-  margin-top: 88vh;
-  display: inline-flex;
-  position: relative;
-  padding: 1em;
-  pointer-events: none;
-}
-.slider__nav-dots::before {
-  content: '';
-  position: absolute;
-  left: calc(1em + 1em + 2px);
-  top: calc(1em + 2px);
-  width: calc(1em - 2px * 2);
-  height: calc(1em / 2 - 2px * 2);
-  background-color: rgba(255, 255, 255, 0.9);
-  transition: transform 0.7s ease-out;
-  transform: translateX(calc((1em + 1em * 2) * (var(--from-left) - 1)));
-}
-.slider__nav-dot {
-  margin: 0 1em;
-  width: 1em;
-  height: 0.5em;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  cursor: crosshair;
-  pointer-events: all;
-  display: inline-block;
-}
-.slider__nav-dot:hover {
-  border-color: rgba(255, 255, 255, 0.7);
-}
-.slider__nav-dot:active {
-  border-color: rgba(255, 255, 255, 0.5);
+.features-container {
+  margin-top: 80px;
+  margin-bottom: 80px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f8b70c;
+    background-color: white;
+    padding: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    text-align: center;
 }
 
-@media only screen and (max-width: 650px) {
-  .slider::before,
-  .slider::after {
-    display: none;
-  }
-
-  .slider__content {
-    width: 100vw;
-    height: 100vh;
-    max-height: 100vh;
-  }
-
-  .slider__text-item-info {
-    bottom: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-  }
-  .slider__text-item-info p {
-    padding: 1em .8em;
-  }
-
-  .slider__text-item-head {
-    top: 5vh;
-    left: 10vw;
-    transform: translateZ(0);
-  }
-  .slider__text-item-head h3 {
-    font-size: 2.5em;
-  }
-
-  .slider__nav-dots {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-
-  .slider__nav-arrow {
-    width: 10vw;
-    position: relative;
-    cursor: auto;
-  }
-  .slider__nav-arrow:active {
-    filter: brightness(0.5);
-  }
-  .slider__nav-arrow::before {
-    content: '';
-    background-image: var(--arrow);
-    background-size: cover;
-    width: 8vw;
-    height: 8vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .slider__nav-arrow--left {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0, transparent 100%);
-  }
-  .slider__nav-arrow--left:active {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0, transparent 100%);
-  }
-  .slider__nav-arrow--right {
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.7) 0, transparent 100%);
-  }
-  .slider__nav-arrow--right:active {
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.9) 0, transparent 100%);
-  }
+.features-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
 }
-.slider-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+.feature-item {
+    text-align: center;
+    width: 150px;
+    padding: 20px;
+    margin: 10px;
 }
-  </style>
+
+.feature-icon {
+    font-size: 60px;
+    color: #f8b70c;
+}
+
+.feature-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.feature-description {
+    font-size: 14px;
+    color: #666;
+}
+
+@media (min-width: 768px) {
+    .features-container {
+        justify-content: space-between;
+    }
+    .feature-item {
+        width: 200px;
+    }
+}
+
+.feature-image {
+    width: 60px;  /* Resmin genişliğini belirle */
+    height: 60px; /* Resmin yüksekliğini belirle */
+    object-fit: contain; /* Resmin oranlarını koruyarak boyutlandırılmasını sağlar */
+    margin-right: 10px;  /* Resim ve başlık arasına boşluk ekler */
+}
+
+</style>
   </head>
 <body>
     <div id="header"></div>
     <main>
       <section >
       
-<div class="slider" id="slider" style="--img-prev:url(images/slider8.png);"> 
+<div class="slider" id="slider" style="--img-prev:url(images/slider1.png);"> 
   <div class="slider__content" id="slider-content">
     <div class="slider__images">
-      <div class="slider__images-item slider__images-item--active" data-id="1"><img src="images/slider10.png"/></div>
-      <div class="slider__images-item" data-id="2"><img src="images/slider8.png"/></div>
-      <div class="slider__images-item" data-id="3"><img src="images/slider5.png"/></div>
-      <div class="slider__images-item" data-id="4"><img src="images/slider6.png"/></div>
+      <div class="slider__images-item slider__images-item--active" data-id="1"><img src="images/slider2.png"/></div>
+      <div class="slider__images-item" data-id="2"><img src="images/slider3.png"/></div>
+      <div class="slider__images-item" data-id="3"><img src="images/slider1.png"/></div>
+      <div class="slider__images-item" data-id="4"><img src="images/slider2.png"/></div>
      <!-- Video ekleme -->
      <div class="slider__images-item" data-id="5">
       <video class="slider-video" autoplay muted loop>
@@ -348,7 +139,7 @@
         Your browser does not support the video tag.
       </video>
     </div>
-      <div class="slider__images-item" data-id="5"><img src="images/slider12.png"/></div>
+      <div class="slider__images-item" data-id="5"><img src="images/slider1.png"/></div>
     </div>
     <div class="slider__text">
       <div class="slider__text-item slider__text-item--active" data-id="1">
@@ -409,14 +200,51 @@
 </div>
     </section>
     
+    <section class="bflex">
+
+    
+      <div class="features-container">
+        <div class="features-wrapper">
+    
+      
+    
+            <!-- 90 Günde İade -->
+            <div class="feature-item">
+                <i class="icon-sync feature-icon"><img src="images/delivery-status.png" alt="" class="feature-image"></i>
+                <h4 class="feature-title">90 Günde İade</h4>
+                <p class="feature-description">Hatalı Ürünlerde</p>
+            </div>
+    
+            <!-- Güvenli Ödeme -->
+            <div class="feature-item">
+              <i class="icon-sync feature-icon"><img src="images/credit-card.png" alt="" class="feature-image"></i>
+              <h4 class="feature-title">Güvenli Ödeme</h4>
+                <p class="feature-description">%100 Güvenli Ödeme</p>
+            </div>
+    
+            <!-- 7/24 Destek -->
+            <div class="feature-item">
+              <i class="icon-sync feature-icon"><img src="images/support.png" alt="" class="feature-image"></i>
+                <h4 class="feature-title">7/24 Destek</h4>
+                <p class="feature-description">Özel Destek</p>
+            </div>
+    
+        </div>
+    </div>
+    
     
 
-
-
+    </section>
+  
   
      
         <section class="best-selling">
-            <h2>Çok Satan Ürünler</h2>
+            <div class="ps-section__header">
+              <h3>En Yeni Ürünler</h3>
+              <ul class="ps-section__links">
+                  <li><a href="products.html" class="view-all-btn">Hepsini Gör</a></li>
+              </ul>
+          </div>
             <div class="best-selling-grid">
                 <div class="product-card">
                     <img src="images/led1.png" alt="LED Şerit Işık" loading="lazy">
@@ -455,8 +283,12 @@
 
 
         <section class="best-selling">
-            <h2>Çok Satan Ürünler</h2>
-            <div class="best-selling-grid">
+          <div class="ps-section__header">
+            <h3>Çok Satan Ürünler</h3>
+            <ul class="ps-section__links">
+                <li><a href="products.html" class="view-all-btn">Hepsini Gör</a></li>
+            </ul>
+        </div>            <div class="best-selling-grid">
                 <div class="product-card">
                     <img src="images/led1.png" alt="LED Şerit Işık" loading="lazy">
                     <div class="product-info">
@@ -530,336 +362,10 @@
             });
     </script>
 
-<script>
-  // Slider item'ları
-const sliderItems = document.querySelectorAll('.slider__images-item');
 
-// Her слайд değiştiğinde videoyu sıfırla
-sliderItems.forEach(item => {
-  item.addEventListener('slideractive', function() {
-    const video = this.querySelector('video');
-    if (video) {
-      video.currentTime = 0;
-      video.play();
-    }
-  });
-});
-  /*
-  More about this function - 
-  https://codepen.io/rachsmith/post/animation-tip-lerp
-*/
-function lerp({ x, y }, { x: targetX, y: targetY }) {
-  const fraction = 0.1;
 
-  x += (targetX - x) * fraction;
-  y += (targetY - y) * fraction;
+    <script src="js/script.js"></script>    
+    <script src="js/slider.js"></script>
 
-  return { x, y };
-}
-
-class Slider {
-  constructor(el) {
-    const imgClass = this.IMG_CLASS = 'slider__images-item';
-    const textClass = this.TEXT_CLASS = 'slider__text-item';
-    const activeImgClass = this.ACTIVE_IMG_CLASS = `${imgClass}--active`;
-    const activeTextClass = this.ACTIVE_TEXT_CLASS = `${textClass}--active`;
-
-    this.el = el;
-    this.contentEl = document.getElementById('slider-content');
-    this.onMouseMove = this.onMouseMove.bind(this);
-
-    // taking advantage of the live nature of 'getElement...' methods
-    this.activeImg = el.getElementsByClassName(activeImgClass);
-    this.activeText = el.getElementsByClassName(activeTextClass);
-    this.images = el.getElementsByTagName('img');
-
-    document.getElementById('slider-dots').
-    addEventListener('click', this.onDotClick.bind(this));
-
-    document.getElementById('left').
-    addEventListener('click', this.prev.bind(this));
-
-    document.getElementById('right').
-    addEventListener('click', this.next.bind(this));
-
-    window.addEventListener('resize', this.onResize.bind(this));
-
-    this.onResize();
-
-    this.length = this.images.length;
-    this.lastX = this.lastY = this.targetX = this.targetY = 0;
-  }
-  onResize() {
-    const htmlStyles = getComputedStyle(document.documentElement);
-    const mobileBreakpoint = htmlStyles.getPropertyValue('--mobile-bkp');
-
-    const isMobile = this.isMobile = matchMedia(
-    `only screen and (max-width: ${mobileBreakpoint})`).
-    matches;
-
-    this.halfWidth = innerWidth / 2;
-    this.halfHeight = innerHeight / 2;
-    this.zDistance = htmlStyles.getPropertyValue('--z-distance');
-
-    if (!isMobile && !this.mouseWatched) {
-      this.mouseWatched = true;
-      this.el.addEventListener('mousemove', this.onMouseMove);
-      this.el.style.setProperty(
-      '--img-prev',
-      `url(${this.images[+this.activeImg[0].dataset.id - 1].src})`);
-
-      this.contentEl.style.setProperty('transform', `translateZ(${this.zDistance})`);
-    } else if (isMobile && this.mouseWatched) {
-      this.mouseWatched = false;
-      this.el.removeEventListener('mousemove', this.onMouseMove);
-      this.contentEl.style.setProperty('transform', 'none');
-    }
-  }
-  getMouseCoefficients({ pageX, pageY } = {}) {
-    const halfWidth = this.halfWidth;
-    const halfHeight = this.halfHeight;
-    const xCoeff = ((pageX || this.targetX) - halfWidth) / halfWidth;
-    const yCoeff = (halfHeight - (pageY || this.targetY)) / halfHeight;
-
-    return { xCoeff, yCoeff };
-  }
-  onMouseMove({ pageX, pageY }) {
-    this.targetX = pageX;
-    this.targetY = pageY;
-
-    if (!this.animationRunning) {
-      this.animationRunning = true;
-      this.runAnimation();
-    }
-  }
-  runAnimation() {
-    if (this.animationStopped) {
-      this.animationRunning = false;
-      return;
-    }
-
-    const maxX = 10;
-    const maxY = 10;
-
-    const newPos = lerp({
-      x: this.lastX,
-      y: this.lastY },
-    {
-      x: this.targetX,
-      y: this.targetY });
-
-
-    const { xCoeff, yCoeff } = this.getMouseCoefficients({
-      pageX: newPos.x,
-      pageY: newPos.y });
-
-
-    this.lastX = newPos.x;
-    this.lastY = newPos.y;
-
-    this.positionImage({ xCoeff, yCoeff });
-
-    this.contentEl.style.setProperty('transform', `
-      translateZ(${this.zDistance})
-      rotateX(${maxY * yCoeff}deg)
-      rotateY(${maxX * xCoeff}deg)
-    `);
-
-    if (this.reachedFinalPoint) {
-      this.animationRunning = false;
-    } else {
-      requestAnimationFrame(this.runAnimation.bind(this));
-    }
-  }
-  get reachedFinalPoint() {
-    const lastX = ~~this.lastX;
-    const lastY = ~~this.lastY;
-    const targetX = this.targetX;
-    const targetY = this.targetY;
-
-    return (lastX == targetX || lastX - 1 == targetX || lastX + 1 == targetX) && (
-    lastY == targetY || lastY - 1 == targetY || lastY + 1 == targetY);
-  }
-  positionImage({ xCoeff, yCoeff }) {
-    const maxImgOffset = 1;
-    const currentImage = this.activeImg[0].children[0];
-
-    currentImage.style.setProperty('transform', `
-      translateX(${maxImgOffset * -xCoeff}em)
-      translateY(${maxImgOffset * yCoeff}em)
-    `);
-  }
-  onDotClick({ target }) {
-    if (this.inTransit) return;
-
-    const dot = target.closest('.slider__nav-dot');
-
-    if (!dot) return;
-
-    const nextId = dot.dataset.id;
-    const currentId = this.activeImg[0].dataset.id;
-
-    if (currentId == nextId) return;
-
-    this.startTransition(nextId);
-  }
-  transitionItem(nextId) {
-    function onImageTransitionEnd(e) {
-      e.stopPropagation();
-
-      nextImg.classList.remove(transitClass);
-
-      self.inTransit = false;
-
-      this.className = imgClass;
-      this.removeEventListener('transitionend', onImageTransitionEnd);
-    }
-
-    const self = this;
-    const el = this.el;
-    const currentImg = this.activeImg[0];
-    const currentId = currentImg.dataset.id;
-    const imgClass = this.IMG_CLASS;
-    const textClass = this.TEXT_CLASS;
-    const activeImgClass = this.ACTIVE_IMG_CLASS;
-    const activeTextClass = this.ACTIVE_TEXT_CLASS;
-    const subActiveClass = `${imgClass}--subactive`;
-    const transitClass = `${imgClass}--transit`;
-    const nextImg = el.querySelector(`.${imgClass}[data-id='${nextId}']`);
-    const nextText = el.querySelector(`.${textClass}[data-id='${nextId}']`);
-
-    let outClass = '';
-    let inClass = '';
-
-    this.animationStopped = true;
-
-    nextText.classList.add(activeTextClass);
-
-    el.style.setProperty('--from-left', nextId);
-
-    currentImg.classList.remove(activeImgClass);
-    currentImg.classList.add(subActiveClass);
-
-    if (currentId < nextId) {
-      outClass = `${imgClass}--next`;
-      inClass = `${imgClass}--prev`;
-    } else {
-      outClass = `${imgClass}--prev`;
-      inClass = `${imgClass}--next`;
-    }
-
-    nextImg.classList.add(outClass);
-
-    requestAnimationFrame(() => {
-      nextImg.classList.add(transitClass, activeImgClass);
-      nextImg.classList.remove(outClass);
-
-      this.animationStopped = false;
-      this.positionImage(this.getMouseCoefficients());
-
-      currentImg.classList.add(transitClass, inClass);
-      currentImg.addEventListener('transitionend', onImageTransitionEnd);
-    });
-
-    if (!this.isMobile)
-    this.switchBackgroundImage(nextId);
-  }
-  startTransition(nextId) {
-    function onTextTransitionEnd(e) {
-      if (!e.pseudoElement) {
-        e.stopPropagation();
-
-        requestAnimationFrame(() => {
-          self.transitionItem(nextId);
-        });
-
-        this.removeEventListener('transitionend', onTextTransitionEnd);
-      }
-    }
-
-    if (this.inTransit) return;
-
-    const activeText = this.activeText[0];
-    const backwardsClass = `${this.TEXT_CLASS}--backwards`;
-    const self = this;
-
-    this.inTransit = true;
-
-    activeText.classList.add(backwardsClass);
-    activeText.classList.remove(this.ACTIVE_TEXT_CLASS);
-    activeText.addEventListener('transitionend', onTextTransitionEnd);
-
-    requestAnimationFrame(() => {
-      activeText.classList.remove(backwardsClass);
-    });
-  }
-  next() {
-    if (this.inTransit) return;
-
-    let nextId = +this.activeImg[0].dataset.id + 1;
-
-    if (nextId > this.length)
-    nextId = 1;
-
-    this.startTransition(nextId);
-  }
-  prev() {
-    if (this.inTransit) return;
-
-    let nextId = +this.activeImg[0].dataset.id - 1;
-
-    if (nextId < 1)
-    nextId = this.length;
-
-    this.startTransition(nextId);
-  }
-  switchBackgroundImage(nextId) {
-    function onBackgroundTransitionEnd(e) {
-      if (e.target === this) {
-        this.style.setProperty('--img-prev', imageUrl);
-        this.classList.remove(bgClass);
-        this.removeEventListener('transitionend', onBackgroundTransitionEnd);
-      }
-    }
-
-    const bgClass = 'slider--bg-next';
-    const el = this.el;
-    const imageUrl = `url(${this.images[+nextId - 1].src})`;
-
-    el.style.setProperty('--img-next', imageUrl);
-    el.addEventListener('transitionend', onBackgroundTransitionEnd);
-    el.classList.add(bgClass);
-  }}
-
-
-const sliderEl = document.getElementById('slider');
-const slider = new Slider(sliderEl);
-
-// ------------------ Demo stuff ------------------------ //
-
-let timer = 0;
-
-function autoSlide() {
-  requestAnimationFrame(() => {
-    slider.next();
-  });
-
-  timer = setTimeout(autoSlide, 5000);
-}
-
-function stopAutoSlide() {
-  clearTimeout(timer);
-
-  this.removeEventListener('touchstart', stopAutoSlide);
-  this.removeEventListener('mousemove', stopAutoSlide);
-}
-
-sliderEl.addEventListener('mousemove', stopAutoSlide);
-sliderEl.addEventListener('touchstart', stopAutoSlide);
-
-timer = setTimeout(autoSlide, 2000);
-</script>
-
-    <script src="js/script.js"></script>
 </body>
 </html>

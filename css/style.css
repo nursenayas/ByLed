@@ -8,7 +8,7 @@
 
 .navbar {
     background: #181828;
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -469,6 +469,10 @@
 
 .footer {
     background: #181828;
+    border-top-style : solid;
+    border-width: 7px;
+    padding:5px;
+    border-color:rgb(247, 203, 28);
     color: white;
     padding: 2rem 0;
     margin-top: 2rem;
@@ -578,7 +582,9 @@
     }
     
     .footer-section {
-        margin-bottom: 1rem;
+        margin-bottom: 1px;
+        width: 290px;
+        text-align: center;
     }
 }
 
@@ -739,7 +745,7 @@
 
 .inside{
     z-index:9;
-    background: #92879B;
+    background: #ecc209;
     width:140px;
     height:140px;
     position: absolute;
