@@ -324,7 +324,7 @@
        
 
 <section class="about">
-    <div class="container">
+    <div class="container" >
         <div class="about-header">
             <h1>Hakkımızda</h1>
             <p>Kalitemiz ve misyonumuz hakkında daha fazla bilgi edinin.</p>
@@ -353,14 +353,14 @@
                     </div>
                 </div>
             </div>
-            <div class="about-text">
+            <div class="about-text"style="background-color: rgb(14, 13, 13);">
                 <p>1999 yılında kurulan şirketimiz, sektöründe lider konumda yer almaktadır. Müşteri memnuniyetini her zaman ön planda tutan bir anlayışla, kaliteli hizmet sunmanın gururunu yaşıyoruz.</p>
                 <br>
                 <p>İnovasyon ve teknolojinin gücü, bizim için her zaman önceliklidir. Uzman ekibimiz ile birlikte, her bir müşterimizin ihtiyaçlarını karşılayacak özel çözümler geliştiriyoruz.</p>
                 <br>
                 <p>Amacımız, global standartlarda hizmet sunarak, sektörde iz bırakan bir marka olmak. Bu yolda, siz değerli müşterilerimizin desteğiyle daha ileri gitmek için çalışıyoruz.</p>
         
-                <div class="info-box">
+                <div class="info-box"style="background-color: #000;">
                     <h2>Neler Yapıyoruz?</h2>
                     <p>Yüksek kalite standartları, müşteri odaklı hizmet, inovatif çözümler ve profesyonel ekip.</p>
                 </div>
@@ -373,21 +373,56 @@
         <div id="footer"></div>
 
     </main>
+ 
     <script>
-        // Header'ı yükle
-        fetch('header.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('header').innerHTML = html;
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+  fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById("header").innerHTML = data;
+          console.log("Header yüklendi");
 
-        // Footer'ı yükle
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('footer').innerHTML = html;
-            });
-    </script>
+          
+
+const menuToggle = document.querySelector('.menu-toggle');
+const bxMenu = document.querySelector('.bx-menu');
+const bxX = document.querySelector('.bx-x');
+
+const navBar = document.querySelector('.navbar');
+
+// --- open menu ---
+
+bxMenu.addEventListener('click', (e)=> {
+  if(e.target.classList.contains('bx-menu')){
+      navBar.classList.add('show-navbar');
+      bxMenu.classList.add('hide-bx');
+      bxX.classList.add('show-bx');
+  }
+})
+
+// --- close menu ---
+
+bxX.addEventListener('click', (e)=> {
+  if(e.target.classList.contains('bx-x')){
+      navBar.classList.remove('show-navbar');
+      bxMenu.classList.remove('hide-bx');
+      bxX.classList.remove('show-bx');
+  }
+})
+
+
+      })
+      .catch(error => console.error("Header yüklenirken hata oluştu:", error));
+});
+
+
+      // Footer'ı yükle
+      fetch('footer.html')
+          .then(response => response.text())
+          .then(html => {
+              document.getElementById('footer').innerHTML = html;
+          });
+  </script>
         <script src="js/script.js"></script>
 <script>
     const canvas = document.getElementById('canvas');

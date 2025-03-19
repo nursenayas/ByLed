@@ -6,6 +6,7 @@
     <title>LED Mağazası</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/slider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
@@ -64,7 +65,7 @@
   margin-bottom: 80px;
     justify-content: center;
     align-items: center;
-    border: 1px solid #f8b70c;
+    border: 1px solid hsl(14, 94%, 65%);
     background-color: white;
     padding: 50px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -125,21 +126,21 @@
     <main>
       <section >
       
-<div class="slider" id="slider" style="--img-prev:url(images/slider1.png);"> 
+<div class="slider" id="slider" style="--img-prev:url(images/slider13.png);"> 
   <div class="slider__content" id="slider-content">
     <div class="slider__images">
-      <div class="slider__images-item slider__images-item--active" data-id="1"><img src="images/slider2.png"/></div>
+      <div class="slider__images-item slider__images-item--active" data-id="1"><img src="images/slider15.png"/></div>
       <div class="slider__images-item" data-id="2"><img src="images/slider3.png"/></div>
-      <div class="slider__images-item" data-id="3"><img src="images/slider1.png"/></div>
-      <div class="slider__images-item" data-id="4"><img src="images/slider2.png"/></div>
+      <div class="slider__images-item" data-id="3"><img src="images/slider13.png"/></div>
+      <div class="slider__images-item" data-id="4"><img src="images/slider10.png"/></div>
      <!-- Video ekleme -->
      <div class="slider__images-item" data-id="5">
       <video class="slider-video" autoplay muted loop>
-        <source src="images/video3.mp4" type="video/mp4">
+        <source src="images/video1.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
-      <div class="slider__images-item" data-id="5"><img src="images/slider1.png"/></div>
+      <div class="slider__images-item" data-id="5"><img src="images/slidervideo.png"/></div>
     </div>
     <div class="slider__text">
       <div class="slider__text-item slider__text-item--active" data-id="1">
@@ -347,12 +348,46 @@
 
 
     <script>
-        // Header'ı yükle
-        fetch('header.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('header').innerHTML = html;
-            });
+        document.addEventListener("DOMContentLoaded", function () {
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+            console.log("Header yüklendi");
+
+            
+
+const menuToggle = document.querySelector('.menu-toggle');
+const bxMenu = document.querySelector('.bx-menu');
+const bxX = document.querySelector('.bx-x');
+
+const navBar = document.querySelector('.navbar');
+
+// --- open menu ---
+
+bxMenu.addEventListener('click', (e)=> {
+    if(e.target.classList.contains('bx-menu')){
+        navBar.classList.add('show-navbar');
+        bxMenu.classList.add('hide-bx');
+        bxX.classList.add('show-bx');
+    }
+})
+
+// --- close menu ---
+
+bxX.addEventListener('click', (e)=> {
+    if(e.target.classList.contains('bx-x')){
+        navBar.classList.remove('show-navbar');
+        bxMenu.classList.remove('hide-bx');
+        bxX.classList.remove('show-bx');
+    }
+})
+
+
+        })
+        .catch(error => console.error("Header yüklenirken hata oluştu:", error));
+});
+
 
         // Footer'ı yükle
         fetch('footer.html')

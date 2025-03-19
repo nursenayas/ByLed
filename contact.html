@@ -167,13 +167,48 @@ footer {
         <div id="footer"></div>
 
     </main>
+
     <script>
-        // Header'ı yükle
-        fetch('header.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('header').innerHTML = html;
-            });
+        document.addEventListener("DOMContentLoaded", function () {
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+            console.log("Header yüklendi");
+
+            
+
+const menuToggle = document.querySelector('.menu-toggle');
+const bxMenu = document.querySelector('.bx-menu');
+const bxX = document.querySelector('.bx-x');
+
+const navBar = document.querySelector('.navbar');
+
+// --- open menu ---
+
+bxMenu.addEventListener('click', (e)=> {
+    if(e.target.classList.contains('bx-menu')){
+        navBar.classList.add('show-navbar');
+        bxMenu.classList.add('hide-bx');
+        bxX.classList.add('show-bx');
+    }
+})
+
+// --- close menu ---
+
+bxX.addEventListener('click', (e)=> {
+    if(e.target.classList.contains('bx-x')){
+        navBar.classList.remove('show-navbar');
+        bxMenu.classList.remove('hide-bx');
+        bxX.classList.remove('show-bx');
+    }
+})
+
+
+        })
+        .catch(error => console.error("Header yüklenirken hata oluştu:", error));
+});
+
 
         // Footer'ı yükle
         fetch('footer.html')

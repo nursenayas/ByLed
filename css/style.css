@@ -3,133 +3,184 @@
     padding: 120;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
-}
-
-
-.navbar {
-    background: #181828;
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: fixed; /* Navbar'ı sabitlemek için bu satır eklenmiştir */
-    top: 0; /* Navbar'ı sayfanın en üstüne sabitlemek için */
-    width: 100%; /* Genişliği tam sayfa genişliğine ayarlamak için */
-    z-index: 1000; /* Navbar'ın diğer öğelerin üzerinde görünmesi için */
     
 }
 
-.navbar .logo a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+body{
+    background-color: #f8f8f8
+}
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400");
+
+
+:root {
+  --primary-color: hsl(9, 94%, 61%);
+  --primary-color2: hsl(9, 94%, 36%);
+
+  --primary-color-alt: hsl(28, 72%, 83%);
+  --second-color: #3e537c;
+  --second-color-alt: hsla(220, 33%, 36%, 65%);
+  --third-color: hsl(220, 36%, 28%);
+  --white-color: #fbfbfb;
+  --white-color-alt: hsl(12, 14%, 93%);
+  --dark-color: hsl(300, 100%, 0%);
 }
 
-.nav-menu {
+
+
+
+/* ================= HEADER ================ */
+header {
     display: flex;
-    gap: 2rem;
-    list-style: none;
-    position: relative;
-}
-
-.nav-menu ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-}
-
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.nav-menu a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-color);
+    padding: 1rem 2rem;
+    position: fixed; /* Sticky yerine fixed kullanarak menünün her zaman görünür olmasını sağlıyoruz */
+    top: 0; /* Sayfanın üst kısmına sabitler */
     left: 0;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: width 0.3s ease;
-}
-
-.nav-menu a:hover::after {
     width: 100%;
+    height: 85px;
+    z-index: 9999; /* Diğer elemanlardan üstte görünmesini sağlar */
+    border-bottom: 2px solid #db7940;
+  }
+.company-logo {
+  font-size: 2.5rem;
+  background: -webkit-linear-gradient(
+    120deg,
+    var(--primary-color-alt),
+    var(--primary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.hamburger {
-    display: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.company-logo img {
+    padding-top: 10px;
+ width: 100px;
+
+  }
+
+.nav-items {
+  display: flex;
+}
+.nav-item {
+  margin: 0 2rem;
+}
+.nav-link {
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+  position: relative;
+  background: -webkit-linear-gradient(
+    var(--primary-color-alt),
+    var(--primary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-link::before {
+  content: "";
+  background: linear-gradient(var(--primary-color), var(--primary-color-alt));
+  width: 100%;
+  height: 0.05rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 150ms;
+}
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.menu-toggle {
+  display: none;
+}
+.bx-menu,
+.bx-x {
+  cursor: pointer;
+  background: -webkit-linear-gradient(
+    120deg,
+    var(--primary-color-alt),
+    var(--primary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: none !important;
+  font-size: 40px;
 }
 
-.hamburger:hover {
-    transform: rotate(90deg);
+
+
+/* =============== MEDIA QUERIES ======= */
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  /* ================= HEADER ================ */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-color);
+    padding: 1rem 2rem;
+    position: fixed; /* Sabit pozisyon */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Diğer elemanların üstünde kalması için */
+  }
+ 
+  .navbar {
+    background-color: var(--dark-color);
+    position: fixed;
+    top: 3.5rem;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 500ms;
+  }
+  .show-navbar {
+    display: flex;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 300ms;
+  }
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .bx-menu {
+    display: block !important;
+  }
+  .show-bx {
+    display: block !important;
+  }
+  .hide-bx {
+    display: none !important;
+  }
+  .company-logo img {
+    width: 60px;
+   
+     }
 }
-
-/* Animasyonlu menü açılma */
-.nav-menu.animate {
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Mobil uyumlu tasarım */
-@media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.9);
-        padding: 1rem;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nav-menu li {
-        margin: 1rem 0;
-    }
-
-    .nav-menu a {
-        color: white;
-        padding: 1rem;
-        border-radius: 4px;
-    }
-
-    .nav-menu a:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-
-    .hamburger {
-        display: block;
-    }
+@media (min-width: 769px) {
+  header {
+    padding: 1rem 5rem;
+  }
+ 
+  
 }
 
 
@@ -309,7 +360,7 @@
 
 .about-text {
     padding: 1rem;
-    background: white;
+    background: rgb(17, 17, 17);
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -320,15 +371,15 @@
 }
 
 .about-text h2 {
-    color: #2c3e50;
+    color: #eef3f8;
     font-size: 2rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e91e63;
+    border-bottom: 2px solid #db7940;
 }
 
 .about-text p {
-    color: #666;
+    color: #fcf2f2;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -336,8 +387,7 @@
 .read-more {
     display: inline-block;
     color: #f9f5f2;
-    background: #ae66f5;
-
+    background: hsl(14, 97%, 58%);
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
@@ -346,8 +396,7 @@
 }
 
 .read-more:hover {
-    background: #d073f2;
-    color: white;
+    background: hsl(14, 94%, 65%);    color: white;
 }
 
 .about-image {
@@ -409,13 +458,7 @@
 }
 
 @media (max-width: 768px) {
-    .navbar .menu {
-        display: none;
-    }
-
-    .navbar .hamburger {
-        display: block;
-    }
+ 
 
     .slider {
         height: 300px;
@@ -468,12 +511,13 @@
 
 
 .footer {
-    background: #181828;
+    background: #000;
     border-top-style : solid;
-    border-width: 7px;
+    border-width: 3.5px;
     padding:5px;
-    border-color:rgb(247, 203, 28);
-    color: white;
+    border-color:hsl(14, 94%, 65%);
+    
+    color:white;
     padding: 2rem 0;
     margin-top: 2rem;
     /*background-image: linear-gradient(#191933, rgba(22, 22, 46, 0.8)), url('https://media.giphy.com/media/WoD6JZnwap6s8/giphy.gif');
@@ -487,6 +531,7 @@
     width: 100%;
     padding: 1rem;
     
+    
 }
 
 .footer-section {
@@ -496,6 +541,7 @@
 
     border-radius: 8px;
     transition: transform 0.3s ease;
+    
 }
 
 .footer-section:hover {
@@ -503,7 +549,7 @@
 }
 
 .footer-section h3 {
-    color: #c8ecee;
+    color: hsl(14, 94%, 65%);
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
@@ -524,7 +570,7 @@
 }
 
 .footer-section a:hover {
-    color: #727066;
+    color: #e97312;
 }
 
 .social-media {
@@ -745,7 +791,7 @@
 
 .inside{
     z-index:9;
-    background: #ecc209;
+    background: hsl(22, 93%, 71%);
     width:140px;
     height:140px;
     position: absolute;
