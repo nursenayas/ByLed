@@ -49,6 +49,17 @@ setInterval(nextSlide, 5000);
 
 
 
+const menuItems = document.querySelectorAll('.nav-menu ul li');
+        menuItems.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                item.style.transform = 'translateY(-5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            item.addEventListener('mouseout', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+
 
 // Scroll ile animasyon tetikleme
 const observerOptions = {

@@ -332,7 +332,7 @@ header {
 
 .about-preview {
     padding: 4rem 2rem;
-    background: #f8f9fa;
+    background: #faf8f8;
     position: relative;
     overflow: hidden;
 }
@@ -360,9 +360,9 @@ header {
 
 .about-text {
     padding: 1rem;
-    background: rgb(17, 17, 17);
+    background: rgb(243, 234, 223);
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(57, 48, 48, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -371,15 +371,15 @@ header {
 }
 
 .about-text h2 {
-    color: #eef3f8;
-    font-size: 2rem;
+    color: #06193e;
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #db7940;
 }
 
 .about-text p {
-    color: #fcf2f2;
+    color: #0c0000;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -387,7 +387,7 @@ header {
 .read-more {
     display: inline-block;
     color: #f9f5f2;
-    background: hsl(14, 97%, 58%);
+    background: hsl(31, 73%, 28%);
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
@@ -396,7 +396,7 @@ header {
 }
 
 .read-more:hover {
-    background: hsl(14, 94%, 65%);    color: white;
+    background: hsl(31, 73%, 65%);    color: white;
 }
 
 .about-image {
