@@ -3,981 +3,1022 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LED Mağazası</title>
+    <title>LED EVİM</title>
+    <link rel="icon" href="images/file.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-       /*  .buy-buttons {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 10px;
-        }
+    <!DOCTYPE html>
+    <html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LED Mağazası</title>
         
-        .button {
-            flex: 1;
-            padding: 10px;
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+      
             
-        }
-        
-        .button a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-weight: bold;
-            color: white;
-            margin: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .trendyol {
-            background-color: #370b07;
-        }
-        
-        .trendyol:hover {
-            background-color: #620303;
-        }
-        
-        .hepsiburada {
-            background-color: #2a0634;
-        }
-        
-        .hepsiburada:hover {
-            background-color: #341447;
-        }
-        
+     
+            .products-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 25px;
+                padding: 20px 0;
+            }
+            
+            .product-card {
+                background-color: #fff;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                position: relative;
+                height: 380px;
+            }
+            
+            .product-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            }
+            
+            .product-image {
+                height: 220px;
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .product-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+            
+            .product-card:hover .product-image img {
+                transform: scale(1.1);
+            }
+            
+            .product-info {
+                padding: 15px;
+                text-align: center;
+            }
+            
+            .product-name {
+                font-size: 18px;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 8px;
+            }
+            
+            .product-price {
+                font-size: 22px;
+                font-weight: 700;
+                color: #6200ea;
+                margin-bottom: 10px;
+            }
+            
+            .product-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                padding: 20px;
+            }
+            
+            .product-card:hover .product-overlay {
+                opacity: 1;
+            }
+            
+            .product-specs {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .spec-item {
+                display: flex;
+                justify-content: space-between;
+                color: #fff;
+                margin-bottom: 8px;
+                font-size: 14px;
+            }
+            
+            .spec-label {
+                font-weight: 600;
+            }
+            
+            .buy-buttons {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 8px;
+            }
+            
+            .buy-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                border-radius: 6px;
+                font-weight: 600;
+                text-decoration: none;
+                color: white;
+                transition: all 0.2s ease;
+            }
+            
+            .buy-button:hover {
+                transform: translateX(5px);
+            }
+            
+            .trendyol {
+                background-color: #ff6f00;
+            }
+            
+            .trendyol:hover {
+                background-color: #ff8f00;
+            }
+            
+            .hepsiburada {
+                background-color: #0063dc;
+            }
+            
+            .hepsiburada:hover {
+                background-color: #0077ff;
+            }
+            
+            .firiya {
+                background-color: #4caf50;
+            }
+            
+            .firiya:hover {
+                background-color: #66bb6a;
+            }
+            
+            .buy-button i {
+                margin-right: 8px;
+            }
+            
+            .product-badge {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background-color: #6200ea;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 600;
+                z-index: 1;
+            }
+            
+            h1.section-title {
+                text-align: center;
+                margin: 30px 0;
+                color: #333;
+                font-size: 32px;
+                position: relative;
+                padding-bottom: 15px;
+            }
+            
+            h1.section-title:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background-color: #6200ea;
+                border-radius: 2px;
+            }
 
+
+
+  
+        /* Mobil cihazlar için dokunmatik desteği */
+        @media (max-width: 768px) {
+            .product-card.touch-active .product-overlay {
+                opacity: 1;
+            }
+            
+            .products-container {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .product-card {
+                height: 320px;
+            }
+            
+            .product-image {
+                height: 180px;
+            }
+            
+            .product-name {
+                font-size: 16px;
+            }
+            
+            .product-price {
+                font-size: 18px;
+            }
+            
+            .spec-item {
+                font-size: 12px;
+                margin-bottom: 4px;
+            }
+            
+            .buy-buttons {
+                gap: 5px;
+            }
+            
+            .buy-button {
+                padding: 8px;
+                font-size: 12px;
+            }
+            
+            .product-badge {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+            
+            h1.section-title {
+                font-size: 24px;
+                margin: 20px 0;
+            }
+        }
         
-        span {
+        /* Küçük mobil cihazlar için ek düzenlemeler */
+        @media (max-width: 480px) {
+            .products-container {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 10px;
+                padding: 10px;
+            }
+            
+            .product-card {
+                height: 280px;
+            }
+            
+            .product-image {
+                height: 150px;
+            }
+            
+            .product-overlay {
+                padding: 10px;
+            }
+            
+            .product-specs {
+                margin-bottom: 10px;
+            }
+            
+            .buy-button i {
+                margin-right: 4px;
+            }
+            
+            .buy-button {
+                font-size: 11px;
+            }
+        }
+        
+        .product-specs {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            margin-bottom: 8px;
             font-size: 14px;
         }
         
-        .button:hover {
-            transform: translateY(-2px);
-        } */
-
-    
-
-     
-
-        .table-container {
-            padding: 20px;
+        .spec-label {
+            font-weight: 600;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            text-align: center;
-            padding: 12px;
-            border: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #6200ea;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        td {
-            background-color: #f9f9f9;
-        }
-
-        tr:nth-child(even) td {
-            background-color: #f1f1f1;
-        }
-
+        
         .buy-buttons {
             display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 8px;
+        }
+        
+        .buy-button {
+            display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
-        }
-
-        .button a {
-            display: inline-block;
-            padding: 10px 20px;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
             text-decoration: none;
-            color: #fff;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            color: white;
+            transition: all 0.2s ease;
         }
-
-        .button a.trendyol {
+        
+        .buy-button:hover {
+            transform: translateX(5px);
+        }
+        
+        .trendyol {
             background-color: #ff6f00;
         }
-
-        .button a.trendyol:hover {
-            background-color: #e65c00;
+        
+        .trendyol:hover {
+            background-color: #ff8f00;
         }
-
-        .button a.hepsiburada {
-            background-color: #007bff;
+        
+        .hepsiburada {
+            background-color: #0063dc;
         }
-
-        .button a.hepsiburada:hover {
-            background-color: #0056b3;
+        
+        .hepsiburada:hover {
+            background-color: #0077ff;
         }
-        </style>
-</head>
-<body>
-    
-    <div id="header"></div>
-
-    <main>
-        <section style=" margin-top: 100px;margin-bottom: 50px;">
-
-            <h1 style="text-align: center; margin-bottom: 30px;">Ürünlerimiz</h1>
-            <div class="card-container">
-                <!-- İlk Kart -->
-                <div class="card">
-                    <div class="container">
-                        <div class="top">
-                            <img src="images/led1.png" alt="LED Kolej" loading="lazy">
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                    <p>£250</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led</h1>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-
-
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>    
-                                            <div class="buy-buttons">
-                                                <div class="button">
-                                                    <a href="#" class="trendyol">
-                                                        <span>Trendyol'dan Al</span>
-                                                    </a>
-                                                </div>
-                                              
-                                            </div>
-              
-            </td>
-            <td>    
-                <div class="buy-buttons">
-              
-                    <div class="button">
-                        <a href="#" class="hepsiburada">
-                            <span>Hepsiburada'dan Al</span>
-                        </a>
-                    </div>
-                </div>
-
-</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
         
-                <!-- İkinci Kart -->
-                <div class="card">
-                    <div class="container">
-                        <div class="top">
-                            <img src="images/led2.png" alt="LED Kolej" loading="lazy">
+        .firiya {
+            background-color: #4caf50;
+        }
         
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                    <p>£300</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                    <p>Added to your cart</p>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        .firiya:hover {
+            background-color: #66bb6a;
+        }
         
-                <!-- Üçüncü Kart -->
-                <div class="card">
-                    <div class="container">
-                        <div class="top" >
-                            <img src="images/led3.png" alt="LED Kolej" loading="lazy">
+        .buy-button i {
+            margin-right: 8px;
+        }
         
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1 >Led Name</h1>
-                                    <p>£350</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                  <!-- dördüncü Kart -->
-                  <div class="card">
-                    <div class="container">
-                        <div class="top" >
-                            <img src="images/led3.png" alt="LED Kolej" loading="lazy">
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #6200ea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 1;
+        }
         
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1 >Led Name</h1>
-                                    <p>£350</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                   <!-- 5. Kart -->
-                   <div class="card">
-                    <div class="container">
-                        <div class="top">
-                            <img src="images/led1.png" alt="LED Kolej" loading="lazy">
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1>Led</h1>
-                                    <p>£250</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led</h1>
-                                    <p>Added to your cart</p>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        h1.section-title {
+            text-align: center;
+            margin: 30px 0;
+            color: #333;
+            font-size: 32px;
+            position: relative;
+            padding-bottom: 15px;
+        }
         
-                <!-- 6. Kart -->
-                <div class="card">
-                    <div class="container">
-                        <div class="top">
-                            <img src="images/led2.png" alt="LED Kolej" loading="lazy">
+        h1.section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #6200ea;
+            border-radius: 2px;
+        }
         
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                    <p>£300</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                    <p>Added to your cart</p>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        /* Mobil için filtre bölümü */
+        .mobile-filters {
+            display: none;
+            padding: 15px;
+            background-color: #fff;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
         
-                <!-- 7. Kart -->
-                <div class="card">
-                    <div class="container">
-                        <div class="top" >
-                            <img src="images/led3.png" alt="LED Kolej" loading="lazy">
-        
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1 >Led Name</h1>
-                                    <p>£350</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                  <!-- 8. Kart -->
-                  <div class="card">
-                    <div class="container">
-                        <div class="top" >
-                            <img src="images/led3.png" alt="LED Kolej" loading="lazy">
-        
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1 >Led Name</h1>
-                                    <p>£350</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                   <!-- 9 Kart -->
-                   <div class="card">
-                    <div class="container">
-                        <div class="top">
-                            <img src="images/led1.png" alt="LED Kolej" loading="lazy">
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1>Led</h1>
-                                    <p>£250</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led</h1>
-                                    <p>Added to your cart</p>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- 10 Kart -->
-                <div class="card">
-                    <div class="container">
-                        <div class="top">
-                            <img src="images/led2.png" alt="LED Kolej" loading="lazy">
-        
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                    <p>£300</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                    <p>Added to your cart</p>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- 11 Kart -->
-                <div class="card">
-                    <div class="container">
-                        <div class="top" >
-                            <img src="images/led3.png" alt="LED Kolej" loading="lazy">
-        
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1 >Led Name</h1>
-                                    <p>£350</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                  <!-- 12 Kart -->
-                  <div class="card">
-                    <div class="container">
-                        <div class="top" >
-                            <img src="images/led3.png" alt="LED Kolej" loading="lazy">
-        
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1 >Led Name</h1>
-                                    <p>£350</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div class="done"><i class="material-icons">done</i></div>
-                                <div class="details">
-                                    <h1>Led Name</h1>
-                                </div>
-                                <div class="remove"><i class="material-icons">clear</i></div>
-                            </div>
-                        </div>
-                        <div class="inside">
-                            <div class="icon"><i class="material-icons">Detay</i></div>
-                            <div class="contents">
-                                <Led Name>
-                                    <tr>
-                                        <th>Width</th>
-                                        <th>Height</th>
-                                    </tr>
-                                    <tr>
-                                        <td>3000mm</td>
-                                        <td>4000mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Something</th>
-                                        <th>Something</th>
-                                    </tr>
-                                    <tr>
-                                        <td>200mm</td>
-                                        <td>200mm</td>
-                                    </tr>
-                                </Led Name>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-              
-        </section>
-
-        <div id="footer"></div>
-
-    </main>
-  
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header").innerHTML = data;
-            console.log("Header yüklendi");
-
+        @media (max-width: 768px) {
+            .mobile-filters {
+                display: block;
+            }
             
+            .filter-button {
+                width: 100%;
+                padding: 10px;
+                background-color: #6200ea;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .filter-button i {
+                margin-right: 8px;
+            }
+            
+            .filter-options {
+                display: none;
+                margin-top: 15px;
+            }
+            
+            .filter-options.show {
+                display: block;
+            }
+            
+            .filter-group {
+                margin-bottom: 15px;
+            }
+            
+            .filter-group-title {
+                font-weight: 600;
+                margin-bottom: 8px;
+                color: #333;
+            }
+            
+            .filter-option {
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+            }
+            
+            .filter-option input {
+                margin-right: 8px;
+            }
+        }
 
-const menuToggle = document.querySelector('.menu-toggle');
-const bxMenu = document.querySelector('.bx-menu');
-const bxX = document.querySelector('.bx-x');
-
-const navBar = document.querySelector('.navbar');
-
-// --- open menu ---
-
-bxMenu.addEventListener('click', (e)=> {
-    if(e.target.classList.contains('bx-menu')){
-        navBar.classList.add('show-navbar');
-        bxMenu.classList.add('hide-bx');
-        bxX.classList.add('show-bx');
-    }
-})
-
-// --- close menu ---
-
-bxX.addEventListener('click', (e)=> {
-    if(e.target.classList.contains('bx-x')){
-        navBar.classList.remove('show-navbar');
-        bxMenu.classList.remove('hide-bx');
-        bxX.classList.remove('show-bx');
-    }
-})
-
-
-        })
-        .catch(error => console.error("Header yüklenirken hata oluştu:", error));
-});
-
-        // Footer'ı yükle
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('footer').innerHTML = html;
+        </style>
+    </head>
+    <body>
+        
+        <div id="header"></div>
+    
+        <main>
+            <section style="margin-top: 100px; margin-bottom: 50px;">
+                <h1 class="section-title">Ürünlerimiz</h1>
+                
+                <div class="products-container">
+                    <!-- Ürün 1 -->
+                    <div class="product-card">
+                        <div class="product-badge">Yeni</div>
+                        <div class="product-image">
+                            <img src="images/led1.png" alt="LED Ürün 1" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Premium LED Panel</h3>
+                            <div class="product-price">£250</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Genişlik:</span>
+                                    <span class="spec-value">3000mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Yükseklik:</span>
+                                    <span class="spec-value">4000mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">120W</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Renk Sıcaklığı:</span>
+                                    <span class="spec-value">6500K</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/led2.png" alt="LED Ürün 2" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Ultra Slim LED</h3>
+                            <div class="product-price">£300</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Genişlik:</span>
+                                    <span class="spec-value">2500mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Yükseklik:</span>
+                                    <span class="spec-value">3500mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">90W</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Renk Sıcaklığı:</span>
+                                    <span class="spec-value">4000K</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 3 -->
+                    <div class="product-card">
+                        <div class="product-badge">İndirimli</div>
+                        <div class="product-image">
+                            <img src="images/led3.png" alt="LED Ürün 3" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">RGB LED Strip</h3>
+                            <div class="product-price">£350</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Genişlik:</span>
+                                    <span class="spec-value">5000mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Yükseklik:</span>
+                                    <span class="spec-value">10mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">60W</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Renk:</span>
+                                    <span class="spec-value">RGB</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/led3.png" alt="LED Ürün 4" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Outdoor LED Panel</h3>
+                            <div class="product-price">£420</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Genişlik:</span>
+                                    <span class="spec-value">4000mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Yükseklik:</span>
+                                    <span class="spec-value">2000mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">150W</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">IP Derecesi:</span>
+                                    <span class="spec-value">IP65</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 5 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/led1.png" alt="LED Ürün 5" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Smart LED Panel</h3>
+                            <div class="product-price">£380</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Genişlik:</span>
+                                    <span class="spec-value">3200mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Yükseklik:</span>
+                                    <span class="spec-value">3200mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">100W</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Bağlantı:</span>
+                                    <span class="spec-value">WiFi</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 6 -->
+                    <div class="product-card">
+                        <div class="product-badge">Çok Satan</div>
+                        <div class="product-image">
+                            <img src="images/led2.png" alt="LED Ürün 6" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Endüstriyel LED</h3>
+                            <div class="product-price">£520</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Genişlik:</span>
+                                    <span class="spec-value">6000mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Yükseklik:</span>
+                                    <span class="spec-value">4500mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">200W</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Dayanıklılık:</span>
+                                    <span class="spec-value">50.000 saat</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 7 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/led3.png" alt="LED Ürün 7" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Mini LED Spot</h3>
+                            <div class="product-price">£180</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Çap:</span>
+                                    <span class="spec-value">80mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Derinlik:</span>
+                                    <span class="spec-value">120mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">15W</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Açı:</span>
+                                    <span class="spec-value">45°</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 8 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/led3.png" alt="LED Ürün 8" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Dekoratif LED</h3>
+                            <div class="product-price">£290</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Genişlik:</span>
+                                    <span class="spec-value">1500mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Yükseklik:</span>
+                                    <span class="spec-value">1500mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">45W</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Renk:</span>
+                                    <span class="spec-value">Değişken</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 9 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/led1.png" alt="LED Ürün 9" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Ofis LED Panel</h3>
+                            <div class="product-price">£320</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Genişlik:</span>
+                                    <span class="spec-value">2400mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Yükseklik:</span>
+                                    <span class="spec-value">600mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">72W</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Renk Sıcaklığı:</span>
+                                    <span class="spec-value">5000K</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 10 -->
+                    <div class="product-card">
+                        <div class="product-badge">Yeni</div>
+                        <div class="product-image">
+                            <img src="images/led2.png" alt="LED Ürün 10" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Bahçe LED Aydınlatma</h3>
+                            <div class="product-price">£220</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Yükseklik:</span>
+                                    <span class="spec-value">800mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Çap:</span>
+                                    <span class="spec-value">120mm</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">25W</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">IP Derecesi:</span>
+                                    <span class="spec-value">IP67</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 11 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/led3.png" alt="LED Ürün 11" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Akıllı LED Ampul</h3>
+                            <div class="product-price">£85</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Duy:</span>
+                                    <span class="spec-value">E27</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">9W</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Bağlantı:</span>
+                                    <span class="spec-value">Bluetooth</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Renk:</span>
+                                    <span class="spec-value">RGB+CCT</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 12 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/led3.png" alt="LED Ürün 12" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Şerit LED</h3>
+                            <div class="product-price">£150</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Uzunluk:</span>
+                                    <span class="spec-value">5m</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">24W/m</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">LED Sayısı:</span>
+                                    <span class="spec-value">60/m</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Renk:</span>
+                                    <span class="spec-value">Sıcak Beyaz</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <div id="footer"></div>
+        </main>
+      
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                fetch("header.html")
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("header").innerHTML = data;
+                        console.log("Header yüklendi");
+                        
+                        const menuToggle = document.querySelector('.menu-toggle');
+                        const bxMenu = document.querySelector('.bx-menu');
+                        const bxX = document.querySelector('.bx-x');
+                        const navBar = document.querySelector('.navbar');
+                        
+                        // --- open menu ---
+                        bxMenu.addEventListener('click', (e)=> {
+                            if(e.target.classList.contains('bx-menu')){
+                                navBar.classList.add('show-navbar');
+                                bxMenu.classList.add('hide-bx');
+                                bxX.classList.add('show-bx');
+                            }
+                        })
+                        
+                        // --- close menu ---
+                        bxX.addEventListener('click', (e)=> {
+                            if(e.target.classList.contains('bx-x')){
+                                navBar.classList.remove('show-navbar');
+                                bxMenu.classList.remove('hide-bx');
+                                bxX.classList.remove('show-bx');
+                            }
+                        })
+                    })
+                    .catch(error => console.error("Header yüklenirken hata oluştu:", error));
             });
-    </script>
-</body>
-</html>
+    
+            // Footer'ı yükle
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer').innerHTML = html;
+                });
+        </script>
+    </body>
+    </html>
+
