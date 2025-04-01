@@ -460,6 +460,89 @@
         .best-selling-grid {
             display: none;
         }
+
+        
+
+
+        .catalog-button-container {
+  position: absolute;
+  bottom: 20px; /* Slider'ın alt kısmına yerleştirir */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100; /* Butonun diğer öğelerin üzerinde görünmesini sağlar */
+  text-align: center;
+  pointer-events: auto; /* Butonun tıklanabilir olmasını sağlar */
+}
+
+.catalog-button {
+  display: inline-block;
+  padding: 15px 50px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #1f1c2c, #928dab); /* Modern degrade arka plan */
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.1); /* Hafif 3D efekti */
+}
+
+.catalog-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+  transform: skewX(-45deg);
+  transition: all 0.5s ease;
+}
+
+.catalog-button:hover::before {
+  left: 100%; /* Parlama efekti hover durumunda hareket eder */
+}
+
+.catalog-button:hover {
+  background: linear-gradient(135deg, #928dab, #1f1c2c); /* Hover durumunda degrade tersine döner */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.2); /* Daha belirgin 3D efekti */
+  transform: translateY(-5px); /* Hover durumunda hafif yukarı hareket */
+}
+
+.catalog-button:active {
+  transform: translateY(2px); /* Tıklama durumunda hafif aşağı hareket */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.1); /* Daha az belirgin gölge */
+}
+
+.catalog-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.catalog-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: scale(0.5);
+  z-index: 1;
+}
+
+.catalog-button:hover::after {
+  opacity: 1;
+  transform: scale(1); /* Hover durumunda parlama efekti büyür */
+}
+
     </style>
 </head>
 <body>
@@ -468,6 +551,7 @@
       <section>
         <div class="slider" id="slider" style="--img-prev:url(images/slider16.png);"> 
           <div class="slider__content" id="slider-content">
+         
             <div class="slider__images">
               <div class="slider__images-item slider__images-item--active" data-id="1"><img src="images/slider15.png"/></div>
               <div class="slider__images-item" data-id="2"><img src="images/slider16.png"/></div>
@@ -523,6 +607,10 @@
                   <p>"Test mesajı yazılacak"</p>
                 </div>
               </div>
+            </div>
+
+            <div class="catalog-button-container">
+              <a href="catalog.html" class="catalog-button">Katalogu İncele</a>
             </div>
           </div>
           <div class="slider__nav">
