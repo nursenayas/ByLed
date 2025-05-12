@@ -53,7 +53,7 @@
             .product-image img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: contain;
                 transition: transform 0.5s ease;
             }
             
@@ -157,11 +157,11 @@
             }
             
             .firiya {
-                background-color: #4caf50;
+                background-color: #b939e8;
             }
             
             .firiya:hover {
-                background-color: #66bb6a;
+                background-color: #7e0aa8;
             }
             
             .buy-button i {
@@ -348,11 +348,11 @@
         }
         
         .firiya {
-            background-color: #4caf50;
+            background-color: #b939e8;
         }
         
         .firiya:hover {
-            background-color: #66bb6a;
+            background-color: #7e0aa8;
         }
         
         .buy-button i {
@@ -467,395 +467,617 @@
                 
                 <div class="products-container">
                     <!-- Ürün 1 -->
-                    <div class="product-card">
-                        <div class="product-badge">Yeni</div>
-                        <div class="product-image">
-                            <img src="images/led1.png" alt="LED Ürün 1" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Premium LED Panel</h3>
-                            <div class="product-price">£250</div>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="product-specs">
-                                <div class="spec-item">
-                                    <span class="spec-label">Genişlik:</span>
-                                    <span class="spec-value">3000mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Yükseklik:</span>
-                                    <span class="spec-value">4000mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Güç:</span>
-                                    <span class="spec-value">120W</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Renk Sıcaklığı:</span>
-                                    <span class="spec-value">6500K</span>
-                                </div>
+                    <div class="product-card" data-variants='[
+                    {
+                      "colorName":"Krom",
+                      "image":"images/Led Avize 6 Toplu 3 Renk-Krom.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/pd/ledevim/led-avize-6-toplu-3-renk-p-930541812",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-6-toplu-3-renk-p-HBCV00008N65CS?magaza=LED%20EV%C4%B0M",
+                        "n11": "https://www.n11.com/urun/led-avize-6-top-3-renk-krom-78126274?magaza=ledevim"
+                      }
+                    },
+                    {
+                      "colorName":"Gold",
+                      "image":"images/Led Avize 6 Toplu 3 Renk-Gold.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/ledevim/led-avize-6-toplu-3-renk-p-930541827",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-6-toplu-3-renk-p-HBCV00008N65PR?magaza=LED%20EV%C4%B0M",
+                        "n11": "https://www.n11.com/urun/led-avize-6-top-3-renk-gold-78126101?magaza=ledevim"
+                      }
+                    }
+                  ]'>
+                    <div class="product-badge">Öne Çıkan</div>
+                    <div class="product-image">
+                        <img src="images/Led Avize 6 Toplu 3 Renk-Gold.webp" alt="Led Avize 6 Toplu 3 Renk" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Led Avize 6 Toplu 3 Renk</h3>
+                        <div class="product-price">2590 ₺</div>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Genişlik:</span>
+                                <span class="spec-value">5000mm</span>
                             </div>
-                            <div class="buy-buttons">
-                                <a href="#" class="buy-button trendyol">
-                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
-                                </a>
-                                <a href="#" class="buy-button hepsiburada">
-                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
-                                </a>
-                                <a href="#" class="buy-button firiya">
-                                    <i class="fas fa-store"></i> Firiya'dan Al
-                                </a>
+                            <div class="spec-item">
+                                <span class="spec-label">Yükseklik:</span>
+                                <span class="spec-value">91-100 cm</span>
                             </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Güç:</span>
+                                <span class="spec-value">75 W</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Renk Sıcaklığı:</span>
+                                <span class="spec-value">3000-K,4200-K,6500-K</span>
+                            </div>
+                        </div>
+                        <!-- Renk varyantları -->
+                        <div class="color-variants" style="margin-bottom: 15px; display: flex; justify-content: center; gap: 10px;">
+                            <div class="color-swatch" data-color-index="0" style="width: 20px; height: 20px; border-radius: 50%; background: #E8F1D4; cursor: pointer; border: 1px solid #ccc;"></div>
+                            <div class="color-swatch" data-color-index="1" style="width: 20px; height: 20px; border-radius: 50%; background-color: #FFD700; cursor: pointer; border: 2px solid #6200ea;"></div>
+                        </div>
+                        <div class="buy-buttons">
+                            <a href="https://www.trendyol.com/ledevim/led-avize-6-toplu-3-renk-p-930541827" class="buy-button trendyol" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                            </a>
+                            <a href="https://www.hepsiburada.com/led-avize-6-toplu-3-renk-p-HBCV00008N65PR?magaza=LED%20EV%C4%B0M" class="buy-button hepsiburada" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                            </a>
+                            <a href="https://www.n11.com/urun/led-avize-6-top-3-renk-gold-78126101?magaza=ledevim" class="buy-button firiya" target="_blank" rel="noopener">
+                                <i class="fas fa-store"></i> N11'den Al
+                            </a>
                         </div>
                     </div>
+                  </div>
                     
                     <!-- Ürün 2 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/led2.png" alt="LED Ürün 2" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Ultra Slim LED</h3>
-                            <div class="product-price">£300</div>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="product-specs">
-                                <div class="spec-item">
-                                    <span class="spec-label">Genişlik:</span>
-                                    <span class="spec-value">2500mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Yükseklik:</span>
-                                    <span class="spec-value">3500mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Güç:</span>
-                                    <span class="spec-value">90W</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Renk Sıcaklığı:</span>
-                                    <span class="spec-value">4000K</span>
-                                </div>
-                            </div>
-                            <div class="buy-buttons">
-                                <a href="#" class="buy-button trendyol">
-                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
-                                </a>
-                                <a href="#" class="buy-button hepsiburada">
-                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
-                                </a>
-                                <a href="#" class="buy-button firiya">
-                                    <i class="fas fa-store"></i> Firiya'dan Al
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                     <div class="product-card" data-variants='[
+                     {
+                       "colorName":"Krom",
+                       "image":"images/Led Avize 4 lü Halozen 4 Top-Krom.webp",
+                       "links": {
+                         "trendyol": "https://www.trendyol.com/ledevim/led-avize-4-lu-halozen-4-top-p-930507908",
+                         "hepsiburada": "https://www.hepsiburada.com/led-avize-4-lu-halozen-4-top-p-HBCV00008N6F7R?magaza=LED%20EV%C4%B0M",
+                         "n11": "https://www.n11.com/urun/led-avize-4lu-halozen-4-top-krom-78126246?magaza=ledevim"
+                       }
+                     },
+                     {
+                       "colorName":"Gold",
+                       "image":"images/Led Avize 4 lü Halozen 4 Top-Gold.webp",
+                       "links": {
+                         "trendyol": "https://www.trendyol.com/pd/ledevim/led-avize-4-lu-halozen-4-top-p-930505929",
+                         "hepsiburada": "https://www.hepsiburada.com/led-avize-4-lu-halozen-4-top-p-HBCV00008N6EXQ?magaza=LED%20EV%C4%B0M",
+                         "n11": "https://www.n11.com/urun/led-avize-4lu-halozen-4-top-gold-78126080?magaza=ledevim"
+                       }
+                     }
+                   ]'>
+                     <div class="product-badge">Öne Çıkan</div>
+                     <div class="product-image">
+                         <img src="images/Led Avize 4 lü Halozen 4 Top-Gold.webp" alt="Led Avize 4'lü Halozen 4 Top" loading="lazy">
+                     </div>
+                     <div class="product-info">
+                         <h3 class="product-name">Led Avize 4'lü Halozen 4 Top</h3>
+                         <div class="product-price">2290 ₺</div>
+                     </div>
+                     <div class="product-overlay">
+                         <div class="product-specs">
+                             <div class="spec-item">
+                                 <span class="spec-label">Genişlik:</span>
+                                 <span class="spec-value">50cm</span>
+                             </div>
+                             <div class="spec-item">
+                                 <span class="spec-label">Yükseklik:</span>
+                                 <span class="spec-value">25 cm</span>
+                             </div>
+                             <div class="spec-item">
+                                 <span class="spec-label">Güç:</span>
+                                 <span class="spec-value">75 W</span>
+                             </div>
+                             <div class="spec-item">
+                                 <span class="spec-label">Renk Sıcaklığı:</span>
+                                 <span class="spec-value">3000-K,4200-K,6500-K</span>
+                             </div>
+                         </div>
+                         <!-- Renk varyantları -->
+                         <div class="color-variants" style="margin-bottom: 15px; display: flex; justify-content: center; gap: 10px;">
+                             <div class="color-swatch" data-color-index="0" style="width: 20px; height: 20px; border-radius: 50%; background: #E8F1D4; cursor: pointer; border: 1px solid #ccc;"></div>
+                             <div class="color-swatch" data-color-index="1" style="width: 20px; height: 20px; border-radius: 50%; background-color: #FFD700; cursor: pointer; border: 2px solid #6200ea;"></div>
+                         </div>
+                         <div class="buy-buttons">
+                             <a href="https://www.trendyol.com/pd/ledevim/led-avize-4-lu-halozen-4-top-p-930505929" class="buy-button trendyol" target="_blank" rel="noopener">
+                                 <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                             </a>
+                             <a href="https://www.hepsiburada.com/led-avize-4-lu-halozen-4-top-p-HBCV00008N6EXQ?magaza=LED%20EV%C4%B0M" class="buy-button hepsiburada" target="_blank" rel="noopener">
+                                 <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                             </a>
+                             <a href="https://www.n11.com/urun/led-avize-4lu-halozen-4-top-gold-78126080?magaza=ledevim" class="buy-button firiya" target="_blank" rel="noopener">
+                                 <i class="fas fa-store"></i> N11'den Al
+                             </a>
+                         </div>
+                     </div>
+                   </div>
                     
                     <!-- Ürün 3 -->
-                    <div class="product-card">
-                        <div class="product-badge">İndirimli</div>
-                        <div class="product-image">
-                            <img src="images/led3.png" alt="LED Ürün 3" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">RGB LED Strip</h3>
-                            <div class="product-price">£350</div>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="product-specs">
-                                <div class="spec-item">
-                                    <span class="spec-label">Genişlik:</span>
-                                    <span class="spec-value">5000mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Yükseklik:</span>
-                                    <span class="spec-value">10mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Güç:</span>
-                                    <span class="spec-value">60W</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Renk:</span>
-                                    <span class="spec-value">RGB</span>
-                                </div>
+                    <div class="product-card" data-variants='[
+                    {
+                      "colorName":"Krom",
+                      "image":"images/Led Avize Kaos Tek Top 3 Renk-Krom.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/pd/ledevim/led-avize-kaos-tek-top-3-renk-p-930490067",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-kaos-tek-top-3-renk-p-HBCV00008N64MD?magaza=LED%20EV%C4%B0M",
+                        "n11": "https://www.n11.com/urun/led-avize-kaos-tek-top-3-renk-krom-78126262?magaza=ledevim"
+                      }
+                    },
+                    {
+                      "colorName":"Gold",
+                      "image":"images/Led Avize Kaos Tek Top 3 Renk-Gold.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/pd/ledevim/led-avize-kaos-tek-top-3-renk-p-930490166",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-kaos-tek-top-3-renk-p-HBCV00008N64O1?magaza=LED%20EV%C4%B0M&",
+                        "n11": "https://www.n11.com/urun/led-avize-kaos-tek-top-3-renk-gold-78126102?magaza=ledevim"
+                      }
+                    }
+                  ]'>
+                    <div class="product-badge">Öne Çıkan</div>
+                    <div class="product-image">
+                        <img src="images/Led Avize Kaos Tek Top 3 Renk-Gold.webp" alt="Led Avize Kaos Tek Top 3 Renk" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Led Avize Kaos Tek Top 3 Renk</h3>
+                        <div class="product-price">990 ₺</div>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Genişlik:</span>
+                                <span class="spec-value">20cm</span>
                             </div>
-                            <div class="buy-buttons">
-                                <a href="#" class="buy-button trendyol">
-                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
-                                </a>
-                                <a href="#" class="buy-button hepsiburada">
-                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
-                                </a>
-                                <a href="#" class="buy-button firiya">
-                                    <i class="fas fa-store"></i> Firiya'dan Al
-                                </a>
+                            <div class="spec-item">
+                                <span class="spec-label">Yükseklik:</span>
+                                <span class="spec-value">90 cm</span>
                             </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Güç:</span>
+                                <span class="spec-value">75 W</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Renk Sıcaklığı:</span>
+                                <span class="spec-value">3000-K,4200-K,6500-K</span>
+                            </div>
+                        </div>
+                        <!-- Renk varyantları -->
+                        <div class="color-variants" style="margin-bottom: 15px; display: flex; justify-content: center; gap: 10px;">
+                            <div class="color-swatch" data-color-index="0" style="width: 20px; height: 20px; border-radius: 50%; background: #E8F1D4; cursor: pointer; border: 1px solid #ccc;"></div>
+                            <div class="color-swatch" data-color-index="1" style="width: 20px; height: 20px; border-radius: 50%; background-color: #FFD700; cursor: pointer; border: 2px solid #6200ea;"></div>
+                        </div>
+                        <div class="buy-buttons">
+                            <a href="https://www.trendyol.com/pd/ledevim/led-avize-kaos-tek-top-3-renk-p-930490166" class="buy-button trendyol" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                            </a>
+                            <a href="https://www.hepsiburada.com/led-avize-kaos-tek-top-3-renk-p-HBCV00008N64O1?magaza=LED%20EV%C4%B0M&" class="buy-button hepsiburada" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                            </a>
+                            <a href="https://www.n11.com/urun/led-avize-kaos-tek-top-3-renk-gold-78126102?magaza=ledevim" class="buy-button firiya" target="_blank" rel="noopener">
+                                <i class="fas fa-store"></i> N11'den Al
+                            </a>
                         </div>
                     </div>
+                  </div>
                     
                     <!-- Ürün 4 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/led3.png" alt="LED Ürün 4" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Outdoor LED Panel</h3>
-                            <div class="product-price">£420</div>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="product-specs">
-                                <div class="spec-item">
-                                    <span class="spec-label">Genişlik:</span>
-                                    <span class="spec-value">4000mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Yükseklik:</span>
-                                    <span class="spec-value">2000mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Güç:</span>
-                                    <span class="spec-value">150W</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">IP Derecesi:</span>
-                                    <span class="spec-value">IP65</span>
-                                </div>
+                    <div class="product-card" data-variants='[
+                    {
+                      "colorName":"Krom",
+                      "image":"images/Led Avize Kral Tacı 5 Top 3 Renk-Krom.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/ledevim/led-avize-kral-taci-5-top-3-renk-p-930484134",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-kral-taci-5-top-3-renk-p-HBCV00008N6LN5",
+                        "n11": "https://www.n11.com/urun/led-avize-kral-taci-5-top-3-renk-krom-78126244?"
+                      }
+                    },
+                    {
+                      "colorName":"Gold",
+                      "image":"images/Led Avize Kral Tacı 5 Top 3 Renk-Gold.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/ledevim/led-avize-kral-taci-5-top-3-renk-p-930486626",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-kral-taci-5-top-3-renk-p-HBCV00008N6KY1",
+                        "n11": "https://www.n11.com/urun/led-avize-kral-taci-5-top-3-renk-gold-78126111"
+                      }
+                    }
+                  ]'>
+                    <div class="product-badge">Öne Çıkan</div>
+                    <div class="product-image">
+                        <img src="images/Led Avize Kral Tacı 5 Top 3 Renk-Gold.webp" alt="Led Avize Kral Tacı 5 Top 3 Renk" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Led Avize Kral Tacı 5 Top 3 Renk</h3>
+                        <div class="product-price">2890 ₺</div>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Genişlik:</span>
+                                <span class="spec-value">50cm</span>
                             </div>
-                            <div class="buy-buttons">
-                                <a href="#" class="buy-button trendyol">
-                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
-                                </a>
-                                <a href="#" class="buy-button hepsiburada">
-                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
-                                </a>
-                                <a href="#" class="buy-button firiya">
-                                    <i class="fas fa-store"></i> Firiya'dan Al
-                                </a>
+                            <div class="spec-item">
+                                <span class="spec-label">Yükseklik:</span>
+                                <span class="spec-value">25cm</span>
                             </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Güç:</span>
+                                <span class="spec-value">75 W</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Renk Sıcaklığı:</span>
+                                <span class="spec-value">3000-K,4200-K,6500-K</span>
+                            </div>
+                        </div>
+                        <!-- Renk varyantları -->
+                        <div class="color-variants" style="margin-bottom: 15px; display: flex; justify-content: center; gap: 10px;">
+                            <div class="color-swatch" data-color-index="0" style="width: 20px; height: 20px; border-radius: 50%; background: #E8F1D4; cursor: pointer; border: 1px solid #ccc;"></div>
+                            <div class="color-swatch" data-color-index="1" style="width: 20px; height: 20px; border-radius: 50%; background-color: #FFD700; cursor: pointer; border: 2px solid #6200ea;"></div>
+                        </div>
+                        <div class="buy-buttons">
+                            <a href="https://www.trendyol.com/ledevim/led-avize-kral-taci-5-top-3-renk-p-930486626" class="buy-button trendyol" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                            </a>
+                            <a href="https://www.hepsiburada.com/led-avize-kral-taci-5-top-3-renk-p-HBCV00008N6KY1" class="buy-button hepsiburada" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                            </a>
+                            <a href="https://www.n11.com/urun/led-avize-kral-taci-5-top-3-renk-gold-78126111" class="buy-button firiya" target="_blank" rel="noopener">
+                                <i class="fas fa-store"></i> N11'den Al
+                            </a>
                         </div>
                     </div>
+                  </div>
                     
                     <!-- Ürün 5 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/led1.png" alt="LED Ürün 5" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Smart LED Panel</h3>
-                            <div class="product-price">£380</div>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="product-specs">
-                                <div class="spec-item">
-                                    <span class="spec-label">Genişlik:</span>
-                                    <span class="spec-value">3200mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Yükseklik:</span>
-                                    <span class="spec-value">3200mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Güç:</span>
-                                    <span class="spec-value">100W</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Bağlantı:</span>
-                                    <span class="spec-value">WiFi</span>
-                                </div>
+                    <div class="product-card" data-variants='[
+                    {
+                      "colorName":"Krom",
+                      "image":"images/Led Avize 3 lü Halozen 4 Top-Krom.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/pd/ledevim/led-avize-3-lu-halozen-4-top-p-930481678",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-3-lu-halozen-4-top-3-renk-p-HBCV00008N6QGE",
+                        "n11": "https://www.n11.com/urun/led-avize-3lu-halozen-4-top-3-renk-krom-78126263?"
+                      }
+                    },
+                    {
+                      "colorName":"Gold",
+                      "image":"images/Led Avize 3 lü Halozen 4 Top-Gold.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/ledevim/led-avize-3-lu-halozen-4-top-p-930480949",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-3-lu-halozen-4-top-3-renk-p-HBCV00008N6RDT",
+                        "n11": "https://www.n11.com/urun/led-avize-3lu-halozen-4-top-3-renk-gold-78126104"
+                      }
+                    }
+                  ]'>
+                    <div class="product-badge">Öne Çıkan</div>
+                    <div class="product-image">
+                        <img src="images/Led Avize 3 lü Halozen 4 Top-Gold.webp" alt="LLed Avize 3 lü Halozen 4 Top" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Led Avize 3'lü Halozen 4 Top</h3>
+                        <div class="product-price">2090 ₺</div>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Genişlik:</span>
+                                <span class="spec-value">50cm</span>
                             </div>
-                            <div class="buy-buttons">
-                                <a href="#" class="buy-button trendyol">
-                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
-                                </a>
-                                <a href="#" class="buy-button hepsiburada">
-                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
-                                </a>
-                                <a href="#" class="buy-button firiya">
-                                    <i class="fas fa-store"></i> Firiya'dan Al
-                                </a>
+                            <div class="spec-item">
+                                <span class="spec-label">Yükseklik:</span>
+                                <span class="spec-value">25cm</span>
                             </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Güç:</span>
+                                <span class="spec-value">75 W</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Renk Sıcaklığı:</span>
+                                <span class="spec-value">3000-K,4200-K,6500-K</span>
+                            </div>
+                        </div>
+                        <!-- Renk varyantları -->
+                        <div class="color-variants" style="margin-bottom: 15px; display: flex; justify-content: center; gap: 10px;">
+                            <div class="color-swatch" data-color-index="0" style="width: 20px; height: 20px; border-radius: 50%; background: #E8F1D4; cursor: pointer; border: 1px solid #ccc;"></div>
+                            <div class="color-swatch" data-color-index="1" style="width: 20px; height: 20px; border-radius: 50%; background-color: #FFD700; cursor: pointer; border: 2px solid #6200ea;"></div>
+                        </div>
+                        <div class="buy-buttons">
+                            <a href="https://www.trendyol.com/ledevim/led-avize-3-lu-halozen-4-top-p-930480949" class="buy-button trendyol" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                            </a>
+                            <a href="https://www.hepsiburada.com/led-avize-3-lu-halozen-4-top-3-renk-p-HBCV00008N6RDT" class="buy-button hepsiburada" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                            </a>
+                            <a href="https://www.n11.com/urun/led-avize-3lu-halozen-4-top-3-renk-gold-78126104" class="buy-button firiya" target="_blank" rel="noopener">
+                                <i class="fas fa-store"></i> N11'den Al
+                            </a>
                         </div>
                     </div>
+                  </div>
                     
                     <!-- Ürün 6 -->
-                    <div class="product-card">
-                        <div class="product-badge">Çok Satan</div>
-                        <div class="product-image">
-                            <img src="images/led2.png" alt="LED Ürün 6" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Endüstriyel LED</h3>
-                            <div class="product-price">£520</div>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="product-specs">
-                                <div class="spec-item">
-                                    <span class="spec-label">Genişlik:</span>
-                                    <span class="spec-value">6000mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Yükseklik:</span>
-                                    <span class="spec-value">4500mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Güç:</span>
-                                    <span class="spec-value">200W</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Dayanıklılık:</span>
-                                    <span class="spec-value">50.000 saat</span>
-                                </div>
+                    <div class="product-card" data-variants='[
+                    {
+                      "colorName":"Krom",
+                      "image":"images/Led Avize Badem Tek Top 3 Renk-Krom.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/pd/ledevim/led-avize-badem-tek-top-3-renk-p-930475610",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-badem-tek-top-3-renk-p-HBCV00008N6DHK",
+                        "n11": "https://www.n11.com/urun/led-avize-badem-tek-top-3-renk-krom-78126289"
+                      }
+                    },
+                    {
+                      "colorName":"Gold",
+                      "image":"images/Led Avize Badem Tek Top 3 Renk-Gold.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/pd/ledevim/led-avize-badem-tek-top-3-renk-p-930474790",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-badem-tek-top-3-renk-p-HBCV00008N6FLN",
+                        "n11": "https://www.n11.com/urun/led-avize-badem-tek-top-3-renk-gold-78126079"
+                      }
+                    }
+                  ]'>
+                    <div class="product-badge">Öne Çıkan</div>
+                    <div class="product-image">
+                        <img src="images/Led Avize Badem Tek Top 3 Renk-Gold.webp" alt="Led Avize Badem Tek Top 3 Renk" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Led Avize Badem Tek Top 3 Renk</h3>
+                        <div class="product-price">1190 ₺</div>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Genişlik:</span>
+                                <span class="spec-value">20cm</span>
                             </div>
-                            <div class="buy-buttons">
-                                <a href="#" class="buy-button trendyol">
-                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
-                                </a>
-                                <a href="#" class="buy-button hepsiburada">
-                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
-                                </a>
-                                <a href="#" class="buy-button firiya">
-                                    <i class="fas fa-store"></i> Firiya'dan Al
-                                </a>
+                            <div class="spec-item">
+                                <span class="spec-label">Yükseklik:</span>
+                                <span class="spec-value">90cm</span>
                             </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Güç:</span>
+                                <span class="spec-value">75 W</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Renk Sıcaklığı:</span>
+                                <span class="spec-value">3000-K,4200-K,6500-K</span>
+                            </div>
+                        </div>
+                        <!-- Renk varyantları -->
+                        <div class="color-variants" style="margin-bottom: 15px; display: flex; justify-content: center; gap: 10px;">
+                            <div class="color-swatch" data-color-index="0" style="width: 20px; height: 20px; border-radius: 50%; background: #E8F1D4; cursor: pointer; border: 1px solid #ccc;"></div>
+                            <div class="color-swatch" data-color-index="1" style="width: 20px; height: 20px; border-radius: 50%; background-color: #FFD700; cursor: pointer; border: 2px solid #6200ea;"></div>
+                        </div>
+                        <div class="buy-buttons">
+                            <a href="https://www.trendyol.com/pd/ledevim/led-avize-badem-tek-top-3-renk-p-930474790" class="buy-button trendyol" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                            </a>
+                            <a href="https://www.hepsiburada.com/led-avize-badem-tek-top-3-renk-p-HBCV00008N6FLN" class="buy-button hepsiburada" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                            </a>
+                            <a href="https://www.n11.com/urun/led-avize-badem-tek-top-3-renk-gold-78126079" class="buy-button firiya" target="_blank" rel="noopener">
+                                <i class="fas fa-store"></i> N11'den Al
+                            </a>
                         </div>
                     </div>
+                  </div>
                     
                     <!-- Ürün 7 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/led3.png" alt="LED Ürün 7" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Mini LED Spot</h3>
-                            <div class="product-price">£180</div>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="product-specs">
-                                <div class="spec-item">
-                                    <span class="spec-label">Çap:</span>
-                                    <span class="spec-value">80mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Derinlik:</span>
-                                    <span class="spec-value">120mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Güç:</span>
-                                    <span class="spec-value">15W</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Açı:</span>
-                                    <span class="spec-value">45°</span>
-                                </div>
-                            </div>
-                            <div class="buy-buttons">
-                                <a href="#" class="buy-button trendyol">
-                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
-                                </a>
-                                <a href="#" class="buy-button hepsiburada">
-                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
-                                </a>
-                                <a href="#" class="buy-button firiya">
-                                    <i class="fas fa-store"></i> Firiya'dan Al
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                     <div class="product-card" data-variants='[
+                     {
+                       "colorName":"Krom",
+                       "image":"images/Led Avize 6 lı Damla 4 Top 3 Renk-Krom.webp",
+                       "links": {
+                         "trendyol": "https://www.trendyol.com/ledevim/led-avize-6-li-damla-4-top-3-renk-p-930414832",
+                         "hepsiburada": "https://www.hepsiburada.com/led-evim-led-avize-6-li-damla-5-top-3-renk-p-HBCV00008NY8DS",
+                         "n11": "https://www.n11.com/urun/led-avize-6li-damla-4-top-3-renk-krom-78126245"
+                       }
+                     },
+                     {
+                       "colorName":"Gold",
+                       "image":"images/Led Avize 6 lı Damla 4 Top 3 Renk-Gold.webp",
+                       "links": {
+                         "trendyol": "https://www.trendyol.com/ledevim/led-avize-6-li-damla-4-top-3-renk-p-930414811",
+                         "hepsiburada": "https://www.hepsiburada.com/led-avize-6-li-damla-5-top-3-renk-p-HBCV00008N6VOD",
+                         "n11": "https://www.n11.com/urun/led-avize-6li-damla-4-top-3-renk-gold-78126112"
+                       }
+                     }
+                   ]'>
+                     <div class="product-badge">Öne Çıkan</div>
+                     <div class="product-image">
+                         <img src="images/Led Avize 6 lı Damla 4 Top 3 Renk-Gold.webp" alt="Led Avize Badem Tek Top 3 Renk" loading="lazy">
+                     </div>
+                     <div class="product-info">
+                         <h3 class="product-name">Led Avize 6'lı Damla 4 Top 3 Renk</h3>
+                         <div class="product-price">2120₺</div>
+                     </div>
+                     <div class="product-overlay">
+                         <div class="product-specs">
+                             <div class="spec-item">
+                                 <span class="spec-label">Genişlik:</span>
+                                 <span class="spec-value">50cm</span>
+                             </div>
+                             <div class="spec-item">
+                                 <span class="spec-label">Yükseklik:</span>
+                                 <span class="spec-value">70cm</span>
+                             </div>
+                             <div class="spec-item">
+                                 <span class="spec-label">Güç:</span>
+                                 <span class="spec-value">75 W</span>
+                             </div>
+                             <div class="spec-item">
+                                 <span class="spec-label">Renk Sıcaklığı:</span>
+                                 <span class="spec-value">3000-K,4200-K,6500-K</span>
+                             </div>
+                         </div>
+                         <!-- Renk varyantları -->
+                         <div class="color-variants" style="margin-bottom: 15px; display: flex; justify-content: center; gap: 10px;">
+                             <div class="color-swatch" data-color-index="0" style="width: 20px; height: 20px; border-radius: 50%; background: #E8F1D4; cursor: pointer; border: 1px solid #ccc;"></div>
+                             <div class="color-swatch" data-color-index="1" style="width: 20px; height: 20px; border-radius: 50%; background-color: #FFD700; cursor: pointer; border: 2px solid #6200ea;"></div>
+                         </div>
+                         <div class="buy-buttons">
+                             <a href="https://www.trendyol.com/ledevim/led-avize-6-li-damla-4-top-3-renk-p-930414811" class="buy-button trendyol" target="_blank" rel="noopener">
+                                 <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                             </a>
+                             <a href="https://www.hepsiburada.com/led-avize-6-li-damla-5-top-3-renk-p-HBCV00008N6VOD" class="buy-button hepsiburada" target="_blank" rel="noopener">
+                                 <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                             </a>
+                             <a href="https://www.n11.com/urun/led-avize-6li-damla-4-top-3-renk-gold-78126112" class="buy-button firiya" target="_blank" rel="noopener">
+                                 <i class="fas fa-store"></i> N11'den Al
+                             </a>
+                         </div>
+                     </div>
+                   </div>
                     
                     <!-- Ürün 8 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/led3.png" alt="LED Ürün 8" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Dekoratif LED</h3>
-                            <div class="product-price">£290</div>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="product-specs">
-                                <div class="spec-item">
-                                    <span class="spec-label">Genişlik:</span>
-                                    <span class="spec-value">1500mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Yükseklik:</span>
-                                    <span class="spec-value">1500mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Güç:</span>
-                                    <span class="spec-value">45W</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Renk:</span>
-                                    <span class="spec-value">Değişken</span>
-                                </div>
+                    <div class="product-card" data-variants='[
+                    {
+                      "colorName":"Krom",
+                      "image":"images/Led Avize Küçük Halozen Tek Top 3 Renk-Krom.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/ledevim/led-avize-kucuk-halozen-tek-top-3-renk-p-930414701",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-kucuk-halozen-tek-top-p-HBCV00008N66HI",
+                        "n11": "https://www.n11.com/urun/led-avize-kucuk-halozen-tek-top-3-renk-krom-78126277?magaza=ledevim"
+                      }
+                    },
+                    {
+                      "colorName":"Gold",
+                      "image":"images/Led Avize Küçük Halozen Tek Top 3 Renk-Gold.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/ledevim/led-avize-kucuk-halozen-tek-top-3-renk-p-930414765",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-kucuk-halozen-tek-top-p-HBCV00008N66A2",
+                        "n11": "https://www.n11.com/urun/led-avize-kucuk-halozen-tek-top-3-renk-gold-78126103?magaza=ledevim"
+                      }
+                    }
+                  ]'>
+                    <div class="product-badge">Öne Çıkan</div>
+                    <div class="product-image">
+                        <img src="images/Led Avize Küçük Halozen Tek Top 3 Renk-Gold.webp" alt="Led Avize Badem Tek Top 3 Renk" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Led Avize Küçük Halozen Tek Top 3 Renk</h3>
+                        <div class="product-price">1100₺</div>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Genişlik:</span>
+                                <span class="spec-value">50cm</span>
                             </div>
-                            <div class="buy-buttons">
-                                <a href="#" class="buy-button trendyol">
-                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
-                                </a>
-                                <a href="#" class="buy-button hepsiburada">
-                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
-                                </a>
-                                <a href="#" class="buy-button firiya">
-                                    <i class="fas fa-store"></i> Firiya'dan Al
-                                </a>
+                            <div class="spec-item">
+                                <span class="spec-label">Yükseklik:</span>
+                                <span class="spec-value">70cm</span>
                             </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Güç:</span>
+                                <span class="spec-value">75 W</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Renk Sıcaklığı:</span>
+                                <span class="spec-value">3000-K,4200-K,6500-K</span>
+                            </div>
+                        </div>
+                        <!-- Renk varyantları -->
+                        <div class="color-variants" style="margin-bottom: 15px; display: flex; justify-content: center; gap: 10px;">
+                            <div class="color-swatch" data-color-index="0" style="width: 20px; height: 20px; border-radius: 50%; background: #E8F1D4; cursor: pointer; border: 1px solid #ccc;"></div>
+                            <div class="color-swatch" data-color-index="1" style="width: 20px; height: 20px; border-radius: 50%; background-color: #FFD700; cursor: pointer; border: 2px solid #6200ea;"></div>
+                        </div>
+                        <div class="buy-buttons">
+                            <a href="https://www.trendyol.com/ledevim/led-avize-kucuk-halozen-tek-top-3-renk-p-930414765" class="buy-button trendyol" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                            </a>
+                            <a href="https://www.hepsiburada.com/led-avize-kucuk-halozen-tek-top-p-HBCV00008N66A2" class="buy-button hepsiburada" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                            </a>
+                            <a href="https://www.n11.com/urun/led-avize-kucuk-halozen-tek-top-3-renk-gold-78126103?magaza=ledevim" class="buy-button firiya" target="_blank" rel="noopener">
+                                <i class="fas fa-store"></i> N11'den Al
+                            </a>
                         </div>
                     </div>
+                  </div>
                     
                     <!-- Ürün 9 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/led1.png" alt="LED Ürün 9" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Ofis LED Panel</h3>
-                            <div class="product-price">£320</div>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="product-specs">
-                                <div class="spec-item">
-                                    <span class="spec-label">Genişlik:</span>
-                                    <span class="spec-value">2400mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Yükseklik:</span>
-                                    <span class="spec-value">600mm</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Güç:</span>
-                                    <span class="spec-value">72W</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Renk Sıcaklığı:</span>
-                                    <span class="spec-value">5000K</span>
-                                </div>
+                    <div class="product-card" data-variants='[
+                    {
+                      "colorName":"Krom",
+                      "image":"images/Led Avize Kuzey Tek Top 3 Renkli-Krom.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/ledevim/led-avize-kucuk-halozen-tek-top-3-renk-p-930414701",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-kuzey-tek-top-3-renk-p-HBCV00008N6Z9P",
+                        "n11": "https://www.n11.com/urun/led-avize-kuzey-tek-top-3-renkli-krom-78126293?magaza=ledevim"
+                      }
+                    },
+                    {
+                      "colorName":"Gold",
+                      "image":"images/Led Avize Kuzey Tek Top 3 Renkli-Gold.webp",
+                      "links": {
+                        "trendyol": "https://www.trendyol.com/ledevim/led-avize-kuzey-tek-top-3-renkli-p-930414748",
+                        "hepsiburada": "https://www.hepsiburada.com/led-avize-kuzey-tek-top-3-renk-p-HBCV00008N6XTU",
+                        "n11": "https://www.n11.com/urun/led-avize-kuzey-tek-top-3-renkli-gold-78126105?magaza=ledevim"
+                      }
+                    }
+                  ]'>
+                    <div class="product-badge">Öne Çıkan</div>
+                    <div class="product-image">
+                        <img src="images/Led Avize Kuzey Tek Top 3 Renkli-Gold.webp" alt="Led Avize Kuzey Tek Top 3 Renkli" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Led Avize Kuzey Tek Top 3 Renkli</h3>
+                        <div class="product-price">2020₺</div>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Genişlik:</span>
+                                <span class="spec-value">50cm</span>
                             </div>
-                            <div class="buy-buttons">
-                                <a href="#" class="buy-button trendyol">
-                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
-                                </a>
-                                <a href="#" class="buy-button hepsiburada">
-                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
-                                </a>
-                                <a href="#" class="buy-button firiya">
-                                    <i class="fas fa-store"></i> Firiya'dan Al
-                                </a>
+                            <div class="spec-item">
+                                <span class="spec-label">Yükseklik:</span>
+                                <span class="spec-value">70cm</span>
                             </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Güç:</span>
+                                <span class="spec-value">75 W</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Renk Sıcaklığı:</span>
+                                <span class="spec-value">3000-K,4200-K,6500-K</span>
+                            </div>
+                        </div>
+                        <!-- Renk varyantları -->
+                        <div class="color-variants" style="margin-bottom: 15px; display: flex; justify-content: center; gap: 10px;">
+                            <div class="color-swatch" data-color-index="0" style="width: 20px; height: 20px; border-radius: 50%; background: #E8F1D4; cursor: pointer; border: 1px solid #ccc;"></div>
+                            <div class="color-swatch" data-color-index="1" style="width: 20px; height: 20px; border-radius: 50%; background-color: #FFD700; cursor: pointer; border: 2px solid #6200ea;"></div>
+                        </div>
+                        <div class="buy-buttons">
+                            <a href="https://www.trendyol.com/ledevim/led-avize-kuzey-tek-top-3-renkli-p-930414748" class="buy-button trendyol" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                            </a>
+                            <a href="https://www.hepsiburada.com/led-avize-kuzey-tek-top-3-renk-p-HBCV00008N6XTU" class="buy-button hepsiburada" target="_blank" rel="noopener">
+                                <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                            </a>
+                            <a href="https://www.n11.com/urun/led-avize-kuzey-tek-top-3-renkli-gold-78126105?magaza=ledevim" class="buy-button firiya" target="_blank" rel="noopener">
+                                <i class="fas fa-store"></i> N11'den Al
+                            </a>
                         </div>
                     </div>
+                  </div>
                     
                     <!-- Ürün 10 -->
-                    <div class="product-card">
-                        <div class="product-badge">Yeni</div>
+                   <!--  <div class="product-card">
+                        <div class="product-badge">Öne Çıkan</div>
                         <div class="product-image">
-                            <img src="images/led2.png" alt="LED Ürün 10" loading="lazy">
+                            <img src="images/10.png" alt="LED Ürün 10" loading="lazy">
                         </div>
                         <div class="product-info">
-                            <h3 class="product-name">Bahçe LED Aydınlatma</h3>
-                            <div class="product-price">£220</div>
+                            <h3 class="product-name">3'lü Top</h3>
+                            <div class="product-price">₺</div>
                         </div>
                         <div class="product-overlay">
                             <div class="product-specs">
@@ -888,16 +1110,16 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <!-- Ürün 11 -->
-                    <div class="product-card">
+               <!--      <div class="product-card">
                         <div class="product-image">
-                            <img src="images/led3.png" alt="LED Ürün 11" loading="lazy">
+                            <img src="images/11.png" alt="LED Ürün 11" loading="lazy">
                         </div>
                         <div class="product-info">
-                            <h3 class="product-name">Akıllı LED Ampul</h3>
-                            <div class="product-price">£85</div>
+                            <h3 class="product-name">4'lü Top</h3>
+                            <div class="product-price">2300 ₺</div>
                         </div>
                         <div class="product-overlay">
                             <div class="product-specs">
@@ -930,16 +1152,16 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <!-- Ürün 12 -->
-                    <div class="product-card">
+                  <!--   <div class="product-card">
                         <div class="product-image">
-                            <img src="images/led3.png" alt="LED Ürün 12" loading="lazy">
+                            <img src="images/12.png" alt="LED Ürün 12" loading="lazy">
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Şerit LED</h3>
-                            <div class="product-price">£150</div>
+                            <div class="product-price">₺</div>
                         </div>
                         <div class="product-overlay">
                             <div class="product-specs">
@@ -972,7 +1194,49 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+
+                    <!-- Ürün 13 -->
+                  <!--   <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/13.png" alt="LED Ürün 12" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">3'lü Top</h3>
+                            <div class="product-price">₺</div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Uzunluk:</span>
+                                    <span class="spec-value">5m</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Güç:</span>
+                                    <span class="spec-value">24W/m</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">LED Sayısı:</span>
+                                    <span class="spec-value">60/m</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Renk:</span>
+                                    <span class="spec-value">Sıcak Beyaz</span>
+                                </div>
+                            </div>
+                            <div class="buy-buttons">
+                                <a href="#" class="buy-button trendyol">
+                                    <i class="fas fa-shopping-cart"></i> Trendyol'dan Al
+                                </a>
+                                <a href="#" class="buy-button hepsiburada">
+                                    <i class="fas fa-shopping-bag"></i> Hepsiburada'dan Al
+                                </a>
+                                <a href="#" class="buy-button firiya">
+                                    <i class="fas fa-store"></i> Firiya'dan Al
+                                </a>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
             </section>
     
@@ -1019,6 +1283,38 @@
                 .then(html => {
                     document.getElementById('footer').innerHTML = html;
                 });
+        </script>
+        <script>
+    document.querySelectorAll('.product-card').forEach(card => {
+  const variants = JSON.parse(card.getAttribute('data-variants') || '[]');
+  if (variants.length > 1) {
+    const swatches = card.querySelectorAll('.color-swatch');
+    const productImage = card.querySelector('.product-image img');
+    const trendyolLink = card.querySelector('.buy-button.trendyol');
+    const hepsiburadaLink = card.querySelector('.buy-button.hepsiburada');
+    const n11Link = card.querySelector('.buy-button.firiya');
+
+    swatches.forEach(swatch => {
+      swatch.addEventListener('click', () => {
+        const index = parseInt(swatch.getAttribute('data-color-index'));
+        if (variants[index]) {
+          // Resmi değiştir
+          productImage.src = variants[index].image;
+          productImage.alt = `LED Ürün - ${variants[index].colorName}`;
+
+          // Linkleri değiştir
+          trendyolLink.href = variants[index].links.trendyol;
+          hepsiburadaLink.href = variants[index].links.hepsiburada;
+          n11Link.href = variants[index].links.n11;
+
+          // Aktif swatch stilini güncelle
+          swatches.forEach(s => s.style.border = '1px solid #ccc');
+          swatch.style.border = '2px solid #6200ea';
+        }
+      });
+    });
+  }
+});
         </script>
     </body>
     </html>

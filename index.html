@@ -306,11 +306,11 @@
         }
         
         .btn-hepsiburada {
-            color: #ff6000;
+            color: #0063dc;
         }
         
         .btn-hepsiburada:hover {
-            background-color: #ff6000;
+            background-color: #0063dc;
             color: white;
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(255, 96, 0, 0.2);
@@ -321,11 +321,11 @@
         }
         
         .btn-firiya {
-            color: #7bc043;
+            color: #b939e8;
         }
         
         .btn-firiya:hover {
-            background-color: #7bc043;
+            background-color: #b939e8;
             color: white;
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(123, 192, 67, 0.2);
@@ -548,89 +548,99 @@
     <div id="header"></div>
     <main>
       <section>
-        <div class="slider" id="slider" style="--img-prev:url(images/slider16.png);"> 
-          <div class="slider__content" id="slider-content">
-         
-            <div class="slider__images">
-              <div class="slider__images-item slider__images-item--active" data-id="1"><img src="images/slider15.png"/></div>
-              <div class="slider__images-item" data-id="2"><img src="images/slider16.png"/></div>
-              <div class="slider__images-item" data-id="3"><img src="images/slider13.png"/></div>
-              <div class="slider__images-item" data-id="4"><img src="images/slider11.png"/></div>
-              <!-- Video ekleme -->
-              <div class="slider__images-item" data-id="5">
-                <video class="slider-video" autoplay muted loop>
-                  <source src="images/video1.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>s
+        <div class="slider-container">
+          <div class="slider" id="slider">
+              <!-- Slide 1 -->
+              <div class="slide active">
+                  <div class="slide-image">
+                      <img src="images/slider15.png" alt="Lüks Avize">
+                  </div>
+                  <div class="slide-content">
+                      <h2 class="slide-title">Lüks Avizeler</h2>
+                      <p class="slide-description">Evinizin her köşesine zarafet katacak şık avizelerle tanışın. Farklı tasarımlar, uygun fiyatlarla!</p>
+                      <a href="pdf-viewer.html?pdf=pdf/katalog.pdf" target="_blank" class="slide-button">Kataloğu İncele</a>
+                  </div>
               </div>
-              <div class="slider__images-item" data-id="5"><img src="images/slidervideo.png"/></div>
-            </div>
-            <div class="slider__text">
-              <div class="slider__text-item slider__text-item--active" data-id="1">
-                <div class="slider__text-item-head">
-                  <h3>Test1</h3>
-                </div>
-                <div class="slider__text-item-info">
-                  <p>"Test mesajı yazılacak"</p>
-                </div>
+              
+              <!-- Slide 2 -->
+              <div class="slide">
+                  <div class="slide-image">
+                      <img src="images/slider16.png" alt="Modern Avize">
+                  </div>
+                  <div class="slide-content">
+                      <h2 class="slide-title">Modern Tasarımlar</h2>
+                      <p class="slide-description">Modern tasarımlarımızla yaşam alanlarınızı yenileyin. Diğer mağazalardan daha uygun fiyatlarla!</p>
+                      <a href="pdf-viewer.html?pdf=pdf/katalog.pdf" target="_blank" class="slide-button">Kataloğu İncele</a>
+                  </div>
               </div>
-              <div class="slider__text-item" data-id="2">
-                <div class="slider__text-item-head">
-                  <h3>Test2</h3>
-                </div>
-                <div class="slider__text-item-info">
-                  <p>"Test mesajı yazılacak"</p>
-                </div>
+              
+              <!-- Slide 3 -->
+              <div class="slide">
+                  <div class="slide-image">
+                      <img src="images/slider13.png" alt="Kristal Avize">
+                  </div>
+                  <div class="slide-content">
+                      <h2 class="slide-title">Uygun Fiyat Garantisi</h2>
+                      <p class="slide-description">Aynı ürünleri daha pahalıya bulabileceğiniz diğer mağazalara göre, bizde her zaman daha uygun fiyatlar!</p>
+                      <a href="pdf-viewer.html?pdf=pdf/katalog.pdf" target="_blank" class="slide-button">Kataloğu İncele</a>
+                  </div>
               </div>
-              <div class="slider__text-item" data-id="3">
-                <div class="slider__text-item-head">
-                  <h3>Test3</h3>
-                </div>
-                <div class="slider__text-item-info">
-                  <p>"Test mesajı yazılacak"</p>
-                </div>
+              
+              <!-- Slide 4 -->
+              <div class="slide">
+                  <div class="slide-image">
+                      <img src="images/slider11.png" alt="LED Avize">
+                  </div>
+                  <div class="slide-content">
+                      <h2 class="slide-title">Kalite ve Tasarım</h2>
+                      <p class="slide-description">Kaliteyi ve şıklığı bir arada sunan avizelerimizle evinizi aydınlatın. Fırsatları kaçırmayın!</p>
+                      <a href="pdf-viewer.html?pdf=pdf/katalog.pdf" target="_blank" class="slide-button">Kataloğu İncele</a>
+                  </div>
               </div>
-              <div class="slider__text-item" data-id="4">
-                <div class="slider__text-item-head">
-                  <h3>Test4</h3>
-                </div>
-                <div class="slider__text-item-info">
-                  <p>"Test mesajı yazılacak"</p>
-                </div>
+              
+              <!-- Slide 5 -->
+            <!-- Slide 5 -->
+            <div class="slide">
+              <div class="slide-video">
+                  <video autoplay muted loop playsinline>
+                      <source src="images/video1.mp4" type="video/mp4">
+                      Tarayıcınız video etiketini desteklemiyor.
+                  </video>
               </div>
-              <div class="slider__text-item" data-id="5">
-                <div class="slider__text-item-head">
-                  <h3>Test</h3>
-                </div>
-                <div class="slider__text-item-info">
-                  <p>"Test mesajı yazılacak"</p>
-                </div>
+              <div class="slide-content">
+                  <div class="slide-tag">Geniş Koleksiyon</div>
+                  <h2 class="slide-title">Geniş Ürün Yelpazesi</h2>
+                  <p class="slide-description">Farklı tarz ve renk seçenekleriyle geniş ürün yelpazemizi keşfedin. Her bütçeye uygun avizeler burada!</p>
+                  <a href="pdf-viewer.html?pdf=pdf/katalog.pdf" target="_blank" class="slide-button">Kataloğu İncele</a>
               </div>
-            </div>
-
-            <div class="catalog-button-container">
-              <a href="catalog.html" class="catalog-button">Katalogu İncele</a>
-            </div>
           </div>
-          <div class="slider__nav">
-            <div class="slider__nav-arrows">
-              <div class="slider__nav-arrow slider__nav-arrow--left" id="left">to left</div>
-              <div class="slider__nav-arrow slider__nav-arrow--right" id="right">to right</div>
-            </div>
-            <div class="slider__nav-dots" id="slider-dots">
-              <div class="slider__nav-dot slider__nav-dot--active" data-id="1"></div>
-              <div class="slider__nav-dot" data-id="2"></div>
-              <div class="slider__nav-dot" data-id="3"></div>
-              <div class="slider__nav-dot" data-id="4"></div>
-              <div class="slider__nav-dot" data-id="5"></div>
-            </div>
+      </div>
+          
+          <div class="slider-controls">
+              <div class="slider-dots" id="slider-dots">
+                  <div class="slider-dot active" data-slide="0"></div>
+                  <div class="slider-dot" data-slide="1"></div>
+                  <div class="slider-dot" data-slide="2"></div>
+                  <div class="slider-dot" data-slide="3"></div>
+                  <div class="slider-dot" data-slide="4"></div>
+              </div>
+              
+              <div class="slider-arrows">
+                  <div class="slider-arrow prev-slide" id="prev-slide">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                      </svg>
+                  </div>
+                  <div class="slider-arrow next-slide" id="next-slide">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                      </svg>
+                  </div>
+              </div>
           </div>
-        </div>
-      </section>
-      <section >
-      
-
+      </div>
     </section>
+
     
       <section class="bflex">
         <div class="features-container">
@@ -673,27 +683,27 @@
           <div class="product-card">
             <div class="product-tag">Yeni</div>
             <div class="product-image">
-              <img src="images/led1.png" alt="LED Şerit Işık">
+              <img src="images/Led Avize 6 Toplu 3 Renk-Gold.webp" alt="Led Avize 6 Toplu 3 Renk Gold">
             </div>
             <div class="product-content">
               <span class="product-category">LED Aydınlatma</span>
-              <h3 class="product-title"><a href="#">RGB LED Şerit Işık 5 Metre</a></h3>
-              <p class="product-description">5 metre uzunluğunda, 16 milyon renk seçeneği sunan, uzaktan kumandalı, müzik senkronizasyonlu RGB LED şerit ışık. Ev ve ofis dekorasyonu için ideal.</p>
+              <h3 class="product-title"><a href="#">Led Avize 6 Toplu 3 Renk Gold</a></h3>
+              <p class="product-description">Şık tasarımlı, 75W gücünde, 3000K-6500K renk sıcaklığı seçenekleri ile ev ve ofis için ideal led avize.</p>
               <div class="product-bottom">
-                <div class="product-price">₺149,90</div>
+                <div class="product-price">₺2590</div>
               </div>
               <div class="marketplace-buttons">
-                <a href="#" class="marketplace-btn btn-trendyol">
+                <a href="https://www.trendyol.com/ledevim/led-avize-6-toplu-3-renk-p-930541827" class="marketplace-btn btn-trendyol" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-bag"></i>
                   <span>Trendyol</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-hepsiburada">
+                <a href="https://www.hepsiburada.com/led-avize-6-toplu-3-renk-p-HBCV00008N65PR?magaza=LED%20EV%C4%B0M" class="marketplace-btn btn-hepsiburada" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-cart"></i>
                   <span>Hepsiburada</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-firiya">
+                <a href="https://www.n11.com/urun/led-avize-6-top-3-renk-gold-78126101?magaza=ledevim" class="marketplace-btn btn-firiya" target="_blank" rel="noopener">
                   <i class="fas fa-store"></i>
-                  <span>Firiya</span>
+                  <span>N11</span>
                 </a>
               </div>
             </div>
@@ -703,27 +713,27 @@
           <div class="product-card">
             <div class="product-tag">Yeni</div>
             <div class="product-image">
-              <img src="images/led1.png" alt="Akıllı LED Ampul">
+              <img src="images/Led Avize 4 lü Halozen 4 Top-Gold.webp" alt="Led Avize 4'lü Halozen 4 Top Gold">
             </div>
             <div class="product-content">
-              <span class="product-category">Akıllı Aydınlatma</span>
-              <h3 class="product-title"><a href="#">Akıllı LED Ampul Wi-Fi Kontrollü</a></h3>
-              <p class="product-description">Wi-Fi bağlantılı, akıllı telefon uygulaması ile kontrol edilebilen, ses asistanları ile uyumlu LED ampul.</p>
+              <span class="product-category">LED Aydınlatma</span>
+              <h3 class="product-title"><a href="#">Led Avize 4'lü Halozen 4 Top Gold</a></h3>
+              <p class="product-description">75W gücünde, 50cm genişlik ve 25cm yükseklik ile modern tasarımlı led avize.</p>
               <div class="product-bottom">
-                <div class="product-price">₺79,90</div>
+                <div class="product-price">₺2290</div>
               </div>
               <div class="marketplace-buttons">
-                <a href="#" class="marketplace-btn btn-trendyol">
+                <a href="https://www.trendyol.com/pd/ledevim/led-avize-4-lu-halozen-4-top-p-930505929" class="marketplace-btn btn-trendyol" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-bag"></i>
                   <span>Trendyol</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-hepsiburada">
+                <a href="https://www.hepsiburada.com/led-avize-4-lu-halozen-4-top-p-HBCV00008N6EXQ?magaza=LED%20EV%C4%B0M" class="marketplace-btn btn-hepsiburada" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-cart"></i>
                   <span>Hepsiburada</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-firiya">
+                <a href="https://www.n11.com/urun/led-avize-4lu-halozen-4-top-gold-78126080?magaza=ledevim" class="marketplace-btn btn-firiya" target="_blank" rel="noopener">
                   <i class="fas fa-store"></i>
-                  <span>Firiya</span>
+                  <span>N11</span>
                 </a>
               </div>
             </div>
@@ -733,27 +743,27 @@
           <div class="product-card">
             <div class="product-tag">Yeni</div>
             <div class="product-image">
-              <img src="images/led1.png" alt="LED Panel">
+              <img src="images/Led Avize Kaos Tek Top 3 Renk-Gold.webp" alt="Led Avize Kaos Tek Top 3 Renk Gold">
             </div>
             <div class="product-content">
-              <span class="product-category">Ofis Aydınlatma</span>
-              <h3 class="product-title"><a href="#">60x60 LED Panel 40W Beyaz Işık</a></h3>
-              <p class="product-description">60x60 cm boyutlarında, 40W gücünde, 6500K beyaz ışık veren, ofis, iş yeri ve mağazalar için ideal LED panel.</p>
+              <span class="product-category">LED Aydınlatma</span>
+              <h3 class="product-title"><a href="#">Led Avize Kaos Tek Top 3 Renk Gold</a></h3>
+              <p class="product-description">20cm genişlik, 90cm yükseklik, 75W güç ile şık ve modern led avize modeli.</p>
               <div class="product-bottom">
-                <div class="product-price">₺199,90</div>
+                <div class="product-price">₺990</div>
               </div>
               <div class="marketplace-buttons">
-                <a href="#" class="marketplace-btn btn-trendyol">
+                <a href="https://www.trendyol.com/pd/ledevim/led-avize-kaos-tek-top-3-renk-p-930490166" class="marketplace-btn btn-trendyol" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-bag"></i>
                   <span>Trendyol</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-hepsiburada">
+                <a href="https://www.hepsiburada.com/led-avize-kaos-tek-top-3-renk-p-HBCV00008N64O1?magaza=LED%20EV%C4%B0M&" class="marketplace-btn btn-hepsiburada" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-cart"></i>
                   <span>Hepsiburada</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-firiya">
+                <a href="https://www.n11.com/urun/led-avize-kaos-tek-top-3-renk-gold-78126102?magaza=ledevim" class="marketplace-btn btn-firiya" target="_blank" rel="noopener">
                   <i class="fas fa-store"></i>
-                  <span>Firiya</span>
+                  <span>N11</span>
                 </a>
               </div>
             </div>
@@ -763,70 +773,34 @@
           <div class="product-card">
             <div class="product-tag">Yeni</div>
             <div class="product-image">
-              <img src="images/led1.png" alt="LED Kolej">
+              <img src="images/Led Avize Kral Tacı 5 Top 3 Renk-Gold.webp" alt="Led Avize Kral Tacı 5 Top 3 Renk Gold">
             </div>
             <div class="product-content">
               <span class="product-category">LED Aydınlatma</span>
-              <h3 class="product-title"><a href="#">LED Kolej</a></h3>
-              <p class="product-description">Yüksek kaliteli, enerji tasarruflu, uzun ömürlü LED kolej aydınlatma sistemi. Geniş alanlar için ideal çözüm.</p>
+              <h3 class="product-title"><a href="#">Led Avize Kral Tacı 5 Top 3 Renk Gold</a></h3>
+              <p class="product-description">Enerji tasarruflu, uzun ömürlü, 75W gücünde kral tacı led avize modeli.</p>
               <div class="product-bottom">
-                <div class="product-price">₺300,00</div>
+                <div class="product-price">₺2890</div>
               </div>
               <div class="marketplace-buttons">
-                <a href="#" class="marketplace-btn btn-trendyol">
+                <a href="https://www.trendyol.com/ledevim/led-avize-kral-taci-5-top-3-renk-p-930486626" class="marketplace-btn btn-trendyol" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-bag"></i>
                   <span>Trendyol</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-hepsiburada">
+                <a href="https://www.hepsiburada.com/led-avize-kral-taci-5-top-3-renk-p-HBCV00008N6KY1" class="marketplace-btn btn-hepsiburada" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-cart"></i>
                   <span>Hepsiburada</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-firiya">
+                <a href="https://www.n11.com/urun/led-avize-kral-taci-5-top-3-renk-gold-78126111" class="marketplace-btn btn-firiya" target="_blank" rel="noopener">
                   <i class="fas fa-store"></i>
-                  <span>Firiya</span>
+                  <span>N11</span>
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Eski ürün kartları (gizli) -->
-        <div class="best-selling-grid">
-          <div class="product-card">
-            <img src="images/led1.png" alt="LED Şerit Işık" loading="lazy">
-            <div class="product-info">
-              <h3>LED Şerit Işık</h3>
-              <p class="price">₺150,00</p>
-              <p class="sold">1000+ Satılmıştır</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <img src="images/led1.png" alt="Akıllı LED Ampul" loading="lazy">
-            <div class="product-info">
-              <h3>Akıllı LED Ampul</h3>
-              <p class="price">₺80,00</p>
-              <p class="sold">500+ Satılmıştır</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <img src="images/led1.png" alt="LED Panel" loading="lazy">
-            <div class="product-info">
-              <h3>LED Panel</h3>
-              <p class="price">₺200,00</p>
-              <p class="sold">750+ Satılmıştır</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <img src="images/led1.png" alt="LED Kolej" loading="lazy">
-            <div class="product-info">
-              <h3>LED Kolej</h3>
-              <p class="price">₺300,00</p>
-              <p class="sold">600+ Satılmıştır</p>
             </div>
           </div>
         </div>
       </section>
-
+      
       <section class="best-selling">
         <div class="ps-section__header">
           <h3>Çok Satan Ürünler</h3>
@@ -841,27 +815,27 @@
           <div class="product-card">
             <div class="product-tag" style="background: #ff9800;">Popüler</div>
             <div class="product-image">
-              <img src="images/led1.png" alt="LED Şerit Işık">
+              <img src="images/Led Avize 3 lü Halozen 4 Top-Gold.webp" alt="Led Avize 3'lü Halozen 4 Top Gold">
             </div>
             <div class="product-content">
               <span class="product-category">LED Aydınlatma</span>
-              <h3 class="product-title"><a href="#">LED Şerit Işık</a></h3>
-              <p class="product-description">Esnek, su geçirmez, uzun ömürlü LED şerit ışık. Ev ve iş yeri dekorasyonu için ideal.</p>
+              <h3 class="product-title"><a href="#">Led Avize 3'lü Halozen 4 Top Gold</a></h3>
+              <p class="product-description">75W gücünde, 50cm genişlik ve 25cm yükseklik ile modern tasarımlı led avize.</p>
               <div class="product-bottom">
-                <div class="product-price">₺150,00</div>
+                <div class="product-price">₺2090</div>
               </div>
               <div class="marketplace-buttons">
-                <a href="#" class="marketplace-btn btn-trendyol">
+                <a href="https://www.trendyol.com/ledevim/led-avize-3-lu-halozen-4-top-p-930480949" class="marketplace-btn btn-trendyol" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-bag"></i>
                   <span>Trendyol</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-hepsiburada">
+                <a href="https://www.hepsiburada.com/led-avize-3-lu-halozen-4-top-3-renk-p-HBCV00008N6RDT" class="marketplace-btn btn-hepsiburada" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-cart"></i>
                   <span>Hepsiburada</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-firiya">
+                <a href="https://www.n11.com/urun/led-avize-3lu-halozen-4-top-3-renk-gold-78126104" class="marketplace-btn btn-firiya" target="_blank" rel="noopener">
                   <i class="fas fa-store"></i>
-                  <span>Firiya</span>
+                  <span>N11</span>
                 </a>
               </div>
             </div>
@@ -871,27 +845,27 @@
           <div class="product-card">
             <div class="product-tag" style="background: #ff9800;">Popüler</div>
             <div class="product-image">
-              <img src="images/led1.png" alt="Akıllı LED Ampul">
+              <img src="images/Led Avize Badem Tek Top 3 Renk-Gold.webp" alt="Led Avize Badem Tek Top 3 Renk Gold">
             </div>
             <div class="product-content">
-              <span class="product-category">Akıllı Aydınlatma</span>
-              <h3 class="product-title"><a href="#">Akıllı LED Ampul</a></h3>
-              <p class="product-description">Enerji tasarruflu, uzun ömürlü, akıllı telefon ile kontrol edilebilen LED ampul.</p>
+              <span class="product-category">LED Aydınlatma</span>
+              <h3 class="product-title"><a href="#">Led Avize Badem Tek Top 3 Renk Gold</a></h3>
+              <p class="product-description">75W gücünde, 20cm genişlik ve 90cm yükseklik ile şık led avize modeli.</p>
               <div class="product-bottom">
-                <div class="product-price">₺80,00</div>
+                <div class="product-price">₺1190</div>
               </div>
               <div class="marketplace-buttons">
-                <a href="#" class="marketplace-btn btn-trendyol">
+                <a href="https://www.trendyol.com/pd/ledevim/led-avize-badem-tek-top-3-renk-p-930474790" class="marketplace-btn btn-trendyol" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-bag"></i>
                   <span>Trendyol</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-hepsiburada">
+                <a href="https://www.hepsiburada.com/led-avize-badem-tek-top-3-renk-p-HBCV00008N6FLN" class="marketplace-btn btn-hepsiburada" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-cart"></i>
                   <span>Hepsiburada</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-firiya">
+                <a href="https://www.n11.com/urun/led-avize-badem-tek-top-3-renk-gold-78126079" class="marketplace-btn btn-firiya" target="_blank" rel="noopener">
                   <i class="fas fa-store"></i>
-                  <span>Firiya</span>
+                  <span>N11</span>
                 </a>
               </div>
             </div>
@@ -901,27 +875,27 @@
           <div class="product-card">
             <div class="product-tag" style="background: #ff9800;">Popüler</div>
             <div class="product-image">
-              <img src="images/led1.png" alt="LED Panel">
+              <img src="images/Led Avize 6 lı Damla 4 Top 3 Renk-Gold.webp" alt="Led Avize 6'lı Damla 4 Top 3 Renk Gold">
             </div>
             <div class="product-content">
-              <span class="product-category">Ofis Aydınlatma</span>
-              <h3 class="product-title"><a href="#">LED Panel</a></h3>
-              <p class="product-description">Yüksek ışık verimliliği, düşük enerji tüketimi, uzun ömürlü LED panel.</p>
+              <span class="product-category">LED Aydınlatma</span>
+              <h3 class="product-title"><a href="#">Led Avize 6'lı Damla 4 Top 3 Renk Gold</a></h3>
+              <p class="product-description">75W gücünde, 50cm genişlik ve 70cm yükseklik ile modern led avize modeli.</p>
               <div class="product-bottom">
-                <div class="product-price">₺200,00</div>
+                <div class="product-price">₺2120</div>
               </div>
               <div class="marketplace-buttons">
-                <a href="#" class="marketplace-btn btn-trendyol">
+                <a href="https://www.trendyol.com/ledevim/led-avize-6-li-damla-4-top-3-renk-p-930414811" class="marketplace-btn btn-trendyol" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-bag"></i>
                   <span>Trendyol</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-hepsiburada">
+                <a href="https://www.hepsiburada.com/led-avize-6-li-damla-5-top-3-renk-p-HBCV00008N6VOD" class="marketplace-btn btn-hepsiburada" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-cart"></i>
                   <span>Hepsiburada</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-firiya">
+                <a href="https://www.n11.com/urun/led-avize-6li-damla-4-top-3-renk-gold-78126112" class="marketplace-btn btn-firiya" target="_blank" rel="noopener">
                   <i class="fas fa-store"></i>
-                  <span>Firiya</span>
+                  <span>N11</span>
                 </a>
               </div>
             </div>
@@ -931,68 +905,32 @@
           <div class="product-card">
             <div class="product-tag" style="background: #ff9800;">Popüler</div>
             <div class="product-image">
-              <img src="images/led1.png" alt="LED Kolej">
+              <img src="images/Led Avize Küçük Halozen Tek Top 3 Renk-Gold.webp" alt="Led Avize Küçük Halozen Tek Top 3 Renk Gold">
             </div>
             <div class="product-content">
               <span class="product-category">LED Aydınlatma</span>
-              <h3 class="product-title"><a href="#">LED Kolej</a></h3>
-              <p class="product-description">Yüksek kaliteli, enerji tasarruflu, uzun ömürlü LED kolej aydınlatma sistemi. Geniş alanlar için ideal çözüm.</p>
+              <h3 class="product-title"><a href="#">Led Avize Küçük Halozen Tek Top 3 Renk Gold</a></h3>
+              <p class="product-description">75W gücünde, 50cm genişlik ve 70cm yükseklik ile kompakt led avize modeli.</p>
               <div class="product-bottom">
-                <div class="product-price">₺300,00</div>
+                <div class="product-price">₺1100</div>
               </div>
               <div class="marketplace-buttons">
-                <a href="#" class="marketplace-btn btn-trendyol">
+                <a href="https://www.trendyol.com/ledevim/led-avize-kucuk-halozen-tek-top-3-renk-p-930414765" class="marketplace-btn btn-trendyol" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-bag"></i>
                   <span>Trendyol</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-hepsiburada">
+                <a href="https://www.hepsiburada.com/led-avize-kucuk-halozen-tek-top-p-HBCV00008N66A2" class="marketplace-btn btn-hepsiburada" target="_blank" rel="noopener">
                   <i class="fas fa-shopping-cart"></i>
                   <span>Hepsiburada</span>
                 </a>
-                <a href="#" class="marketplace-btn btn-firiya">
+                <a href="https://www.n11.com/urun/led-avize-kucuk-halozen-tek-top-3-renk-gold-78126103?magaza=ledevim" class="marketplace-btn btn-firiya" target="_blank" rel="noopener">
                   <i class="fas fa-store"></i>
-                  <span>Firiya</span>
+                  <span>N11</span>
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
-        <!-- Eski ürün kartları (gizli) -->
-     <!--    <div class="best-selling-grid">
-          <div class="product-card">
-            <img src="images/led1.png" alt="LED Şerit Işık" loading="lazy">
-            <div class="product-info">
-              <h3>LED Şerit Işık</h3>
-              <p class="price">₺150,00</p>
-              <p class="sold">1000+ Satılmıştır</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <img src="images/led1.png" alt="Akıllı LED Ampul" loading="lazy">
-            <div class="product-info">
-              <h3>Akıllı LED Ampul</h3>
-              <p class="price">₺80,00</p>
-              <p class="sold">500+ Satılmıştır</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <img src="images/led1.png" alt="LED Panel" loading="lazy">
-            <div class="product-info">
-              <h3>LED Panel</h3>
-              <p class="price">₺200,00</p>
-              <p class="sold">750+ Satılmıştır</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <img src="images/led1.png" alt="LED Kolej" loading="lazy">
-            <div class="product-info">
-              <h3>LED Kolej</h3>
-              <p class="price">₺300,00</p>
-              <p class="sold">600+ Satılmıştır</p>
-            </div>
-          </div>
-        </div> -->
       </section>
 
       <section class="about-preview">
