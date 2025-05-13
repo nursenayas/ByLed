@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="images/logo2.png" type="image/svg+xml">
+
+<title>LedEvim Katalog</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+<style>
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  header {
+    width: 100%;
+    background: #1f1f1f;
+    padding: 12px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  #page-info {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    user-select: none;
+  }
+  #viewer-wrapper {
+    position: relative;
+    width: 90vw;
+    max-width: 900px;
+    height: 80vh;
+    background: #222;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 2000px; /* Perspektifi artırdım */
+  }
+  #canvas-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  canvas {
+    border-radius: 12px;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    user-select: none;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  }
+  #pdf-render-current {
+    transform: translate(-50%, -50%) rotateY(0deg);
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1); /* Easing ayarlandı */
+    z-index: 2;
+  }
+  #pdf-render-next {
+    transform: translate(-50%, -50%) rotateY(180deg); /* Başlangıç açısı */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1), opacity 0.4s ease; /* Easing ayarlandı */
+  }
+  button.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(168, 76, 34, 0.8);
+    border: none;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 0 10px rgba(184, 100, 43, 0.7);
+    z-index: 10;
+  }
+  button.nav-btn:hover:not(:disabled) {
+    background: rgba(85, 40, 7, 0.9);
+  }
+  button.nav-btn:disabled {
+    background: #555;
+    cursor: not-allowed;
+  }
+  #prev {
+    left: 10px;
+  }
+  #next {
+    right: 10px;
+  }
+  @media (max-width: 600px) {
+    #viewer-wrapper {
+      width: 95vw;
+      height: 70vh;
+    }
+    button.nav-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1.4rem;
+      padding: 10px 14px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>Led Evim Katalog</header>
+
+  <div id="page-info" aria-live="polite" aria-atomic="true">Sayfa: <span id="page-num">0</span> / <span id="page-count">0</span></div>
+
+  <div id="viewer-wrapper" role="main" aria-label="PDF Görüntüleyici">
+    <button id="prev" class="nav-btn" aria-label="Önceki Sayfa" title="Önceki Sayfa" disabled>←</button>
+    <div id="canvas-container">
+      <canvas id="pdf-render-current"></canvas>
+      <canvas id="pdf-render-next"></canvas>
+    </div>
+    <button id="next" class="nav-btn" aria-label="Sonraki Sayfa" title="Sonraki Sayfa" disabled>→</button>
+  </div>
+
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const pdfUrl = urlParams.get('pdf');
+
+  const canvasCurrent = document.getElementById('pdf-render-current');
+  const ctxCurrent = canvasCurrent.getContext('2d');
+  const canvasNext = document.getElementById('pdf-render-next');
+  const ctxNext = canvasNext.getContext('2d');
+
+  const pageNumSpan = document.getElementById('page-num');
+  const pageCountSpan = document.getElementById('page-count');
+  const btnPrev = document.getElementById('prev');
+  const btnNext = document.getElementById('next');
+  const canvasContainer = document.getElementById('canvas-container');
+
+  let pdfDoc = null;
+  let currentPage = 1;
+  let scale = 1.0;
+  let isAnimating = false;
+
+  function calculateScale(page) {
+    const viewport = page.getViewport({ scale: 1 });
+    const containerWidth = canvasContainer.clientWidth;
+    const containerHeight = canvasContainer.clientHeight;
+    return Math.min(containerWidth / viewport.width, containerHeight / viewport.height);
+  }
+
+  async function renderPageToCanvas(pageNum, canvas, ctx) {
+    try {
+      const page = await pdfDoc.getPage(pageNum);
+      scale = calculateScale(page);
+      const viewport = page.getViewport({ scale });
+      
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      
+      const renderContext = { canvasContext: ctx, viewport };
+      await page.render(renderContext).promise;
+      
+      return true;
+    } catch(err) {
+      console.error("Render hatası:", err);
+      return false;
+    }
+  }
+
+  async function renderInitialPage() {
+    await renderPageToCanvas(currentPage, canvasCurrent, ctxCurrent);
+    pageNumSpan.textContent = currentPage;
+    pageCountSpan.textContent = pdfDoc.numPages;
+    btnPrev.disabled = (currentPage <= 1);
+    btnNext.disabled = (currentPage >= pdfDoc.numPages);
+  }
+
+  async function flipPage(next) {
+    if (isAnimating || !pdfDoc) return;
+
+    const newPage = next ? currentPage + 1 : currentPage - 1;
+    if (newPage < 1 || newPage > pdfDoc.numPages) return;
+
+    isAnimating = true;
+
+    // Yeni sayfayı render et
+    await renderPageToCanvas(newPage, canvasNext, ctxNext);
+
+    // Animasyon başlangıç pozisyonları
+    canvasNext.style.transformOrigin = 'center';
+    canvasCurrent.style.transformOrigin = 'center';
+
+    // Yeni sayfayı başlangıç pozisyonuna getir (arka tarafta)
+    canvasNext.style.transform = 'translate(-50%, -50%) rotateY(180deg)';
+    canvasNext.style.opacity = '1';
+    canvasNext.style.zIndex = '3';
+
+    // Küçük gecikme ile animasyon başlat
+    requestAnimationFrame(() => {
+      // Mevcut sayfayı çevir
+      canvasCurrent.style.transform = 'translate(-50%, -50%) rotateY(0deg)';
+      
+      // Yeni sayfayı aç
+      canvasNext.style.transform = 'translate(-50%, -50%) rotateY(0deg)';
+    }, 10);
+
+    // Animasyon bitişini bekle
+    setTimeout(() => {
+      // Canvas'ları swap et
+      ctxCurrent.clearRect(0, 0, canvasCurrent.width, canvasCurrent.height);
+      ctxCurrent.drawImage(canvasNext, 0, 0);
+      
+      // Stilleri resetle
+      canvasCurrent.style.transform = 'translate(-50%, -50%) rotateY(0deg)';
+      canvasCurrent.style.transformOrigin = 'center';
+      canvasCurrent.style.zIndex = '2';
+      
+      canvasNext.style.opacity = '0';
+      canvasNext.style.transform = 'translate(-50%, -50%) rotateY(180deg)';
+      canvasNext.style.zIndex = '1';
+
+      currentPage = newPage;
+      pageNumSpan.textContent = currentPage;
+      btnPrev.disabled = (currentPage <= 1);
+      btnNext.disabled = (currentPage >= pdfDoc.numPages);
+
+      isAnimating = false;
+    }, 700);
+  }
+
+  btnPrev.addEventListener('click', () => flipPage(false));
+  btnNext.addEventListener('click', () => flipPage(true));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      btnPrev.click();
+    } else if (e.key === 'ArrowRight') {
+      btnNext.click();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (pdfDoc && !isAnimating) {
+      renderInitialPage();
+    }
+  });
+
+  async function loadPDF(url) {
+    try {
+      pdfDoc = await pdfjsLib.getDocument(url).promise;
+      pageCountSpan.textContent = pdfDoc.numPages;
+      currentPage = 1;
+      await renderInitialPage();
+    } catch (error) {
+      alert('PDF yüklenirken hata oluştu: ' + error.message);
+    }
+  }
+
+  if (pdfUrl) {
+    loadPDF(pdfUrl);
+  } else {
+    alert('PDF dosyası belirtilmedi! URL parametresine ?pdf=PDF_DOSYA_URL ekleyin.');
+  }
+</script>
+</body>
+</html>
