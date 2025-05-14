@@ -352,7 +352,7 @@
 /* Ekstra büyük ekranlar için */
 @media (min-width: 1400px) {
     .slider-container {
-        height: 1000px;
+        height: 1200px;
     }
     
     .slide-content {
