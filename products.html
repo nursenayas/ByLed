@@ -16,10 +16,6 @@
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <style>
-      
-      
-            
-     
             .products-container {
                 max-width: 1200px;
                 margin: 0 auto;
@@ -28,7 +24,7 @@
                 gap: 25px;
                 padding: 20px 0;
             }
-            
+    
             .product-card {
                 background-color: #fff;
                 border-radius: 12px;
@@ -38,48 +34,48 @@
                 position: relative;
                 height: 380px;
             }
-            
+    
             .product-card:hover {
                 transform: translateY(-10px);
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 105px 30px rgba(0, 0, 0, 0.2);
             }
-            
+    
             .product-image {
                 height: 220px;
                 overflow: hidden;
                 position: relative;
             }
-            
+    
             .product-image img {
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
                 transition: transform 0.5s ease;
             }
-            
+    
             .product-card:hover .product-image img {
                 transform: scale(1.1);
             }
-            
+    
             .product-info {
                 padding: 15px;
                 text-align: center;
             }
-            
+    
             .product-name {
                 font-size: 18px;
                 font-weight: 600;
                 color: #333;
                 margin-bottom: 8px;
             }
-            
+    
             .product-price {
                 font-size: 22px;
                 font-weight: 700;
                 color: #6200ea;
                 margin-bottom: 10px;
             }
-            
+    
             .product-overlay {
                 position: absolute;
                 top: 0;
@@ -94,17 +90,20 @@
                 opacity: 0;
                 transition: opacity 0.3s ease;
                 padding: 20px;
+                box-sizing: border-box;
+                overflow-y: auto;
             }
-            
+    
             .product-card:hover .product-overlay {
                 opacity: 1;
             }
-            
+    
             .product-specs {
                 width: 100%;
                 margin-bottom: 20px;
+                font-size: 14px;
             }
-            
+    
             .spec-item {
                 display: flex;
                 justify-content: space-between;
@@ -112,18 +111,18 @@
                 margin-bottom: 8px;
                 font-size: 14px;
             }
-            
+    
             .spec-label {
                 font-weight: 600;
             }
-            
+    
             .buy-buttons {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
                 gap: 8px;
             }
-            
+    
             .buy-button {
                 display: flex;
                 align-items: center;
@@ -135,39 +134,39 @@
                 color: white;
                 transition: all 0.2s ease;
             }
-            
+    
             .buy-button:hover {
                 transform: translateX(5px);
             }
-            
+    
             .trendyol {
                 background-color: #ff6f00;
             }
-            
+    
             .trendyol:hover {
                 background-color: #ff8f00;
             }
-            
+    
             .hepsiburada {
                 background-color: #0063dc;
             }
-            
+    
             .hepsiburada:hover {
                 background-color: #0077ff;
             }
-            
+    
             .firiya {
                 background-color: #b939e8;
             }
-            
+    
             .firiya:hover {
                 background-color: #7e0aa8;
             }
-            
+    
             .buy-button i {
                 margin-right: 8px;
             }
-            
+    
             .product-badge {
                 position: absolute;
                 top: 10px;
@@ -180,7 +179,7 @@
                 font-weight: 600;
                 z-index: 1;
             }
-            
+    
             h1.section-title {
                 text-align: center;
                 margin: 30px 0;
@@ -189,7 +188,7 @@
                 position: relative;
                 padding-bottom: 15px;
             }
-            
+    
             h1.section-title:after {
                 content: '';
                 position: absolute;
@@ -201,260 +200,136 @@
                 background-color: #6200ea;
                 border-radius: 2px;
             }
-
-
-
-  
-        /* Mobil cihazlar için dokunmatik desteği */
-        @media (max-width: 768px) {
-            .product-card.touch-active .product-overlay {
-                opacity: 1;
+    
+            /* Mobil cihazlar için dokunmatik desteği */
+            @media (max-width: 768px) {
+                .product-card.touch-active .product-overlay {
+                    opacity: 1;
+                }
+    
+                .products-container {
+                    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                    gap: 15px;
+                    padding: 15px;
+                }
+    
+                .product-card {
+                    height: 320px;
+                }
+    
+                .product-image {
+                    height: 180px;
+                }
+    
+                .product-name {
+                    font-size: 16px;
+                }
+    
+                .product-price {
+                    font-size: 18px;
+                }
+    
+                .spec-item {
+                    font-size: 12px;
+                    margin-bottom: 4px;
+                }
+    
+                .buy-buttons {
+                    gap: 5px;
+                }
+    
+                .buy-button {
+                    padding: 8px;
+                    font-size: 12px;
+                }
+    
+                .product-badge {
+                    font-size: 10px;
+                    padding: 3px 8px;
+                }
+    
+                h1.section-title {
+                    font-size: 24px;
+                    margin: 20px 0;
+                }
+    
+                .product-overlay {
+                    padding: 15px;
+                    max-height: 100%;
+                    overflow-y: auto;
+                }
+    
+                .product-specs {
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                }
+    
+                .spec-item {
+                    font-size: 12px;
+                    margin-bottom: 5px;
+                }
+    
+                .buy-button {
+                    padding: 8px;
+                    font-size: 12px;
+                }
+    
+                .color-variants {
+                    margin-bottom: 10px;
+                    gap: 8px;
+                }
+    
+                .color-swatch {
+                    width: 16px !important;
+                    height: 16px !important;
+                }
             }
-            
-            .products-container {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-                gap: 15px;
-                padding: 15px;
+    
+            /* Küçük mobil cihazlar için ek düzenlemeler */
+            @media (max-width: 480px) {
+                .products-container {
+                    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                    gap: 10px;
+                    padding: 10px;
+                }
+    
+                .product-card {
+                    height: 280px;
+                }
+    
+                .product-image {
+                    height: 150px;
+                }
+    
+                .product-overlay {
+                    padding: 10px;
+                }
+    
+                .product-specs {
+                    margin-bottom: 8px;
+                }
+    
+                .spec-item {
+                    font-size: 11px;
+                    margin-bottom: 3px;
+                }
+    
+                .buy-button {
+                    padding: 6px;
+                    font-size: 11px;
+                }
+    
+                .color-variants {
+                    gap: 6px;
+                }
+    
+                .color-swatch {
+                    width: 14px !important;
+                    height: 14px !important;
+                }
             }
-            
-            .product-card {
-                height: 320px;
-            }
-            
-            .product-image {
-                height: 180px;
-            }
-            
-            .product-name {
-                font-size: 16px;
-            }
-            
-            .product-price {
-                font-size: 18px;
-            }
-            
-            .spec-item {
-                font-size: 12px;
-                margin-bottom: 4px;
-            }
-            
-            .buy-buttons {
-                gap: 5px;
-            }
-            
-            .buy-button {
-                padding: 8px;
-                font-size: 12px;
-            }
-            
-            .product-badge {
-                font-size: 10px;
-                padding: 3px 8px;
-            }
-            
-            h1.section-title {
-                font-size: 24px;
-                margin: 20px 0;
-            }
-        }
-        
-        /* Küçük mobil cihazlar için ek düzenlemeler */
-        @media (max-width: 480px) {
-            .products-container {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                gap: 10px;
-                padding: 10px;
-            }
-            
-            .product-card {
-                height: 280px;
-            }
-            
-            .product-image {
-                height: 150px;
-            }
-            
-            .product-overlay {
-                padding: 10px;
-            }
-            
-            .product-specs {
-                margin-bottom: 10px;
-            }
-            
-            .buy-button i {
-                margin-right: 4px;
-            }
-            
-            .buy-button {
-                font-size: 11px;
-            }
-        }
-        
-        .product-specs {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            color: #fff;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        
-        .spec-label {
-            font-weight: 600;
-        }
-        
-        .buy-buttons {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            gap: 8px;
-        }
-        
-        .buy-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            color: white;
-            transition: all 0.2s ease;
-        }
-        
-        .buy-button:hover {
-            transform: translateX(5px);
-        }
-        
-        .trendyol {
-            background-color: #ff6f00;
-        }
-        
-        .trendyol:hover {
-            background-color: #ff8f00;
-        }
-        
-        .hepsiburada {
-            background-color: #0063dc;
-        }
-        
-        .hepsiburada:hover {
-            background-color: #0077ff;
-        }
-        
-        .firiya {
-            background-color: #b939e8;
-        }
-        
-        .firiya:hover {
-            background-color: #7e0aa8;
-        }
-        
-        .buy-button i {
-            margin-right: 8px;
-        }
-        
-        .product-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #6200ea;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            z-index: 1;
-        }
-        
-        h1.section-title {
-            text-align: center;
-            margin: 30px 0;
-            color: #333;
-            font-size: 32px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        h1.section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: #6200ea;
-            border-radius: 2px;
-        }
-        
-        /* Mobil için filtre bölümü */
-        .mobile-filters {
-            display: none;
-            padding: 15px;
-            background-color: #fff;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-filters {
-                display: block;
-            }
-            
-            .filter-button {
-                width: 100%;
-                padding: 10px;
-                background-color: #6200ea;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                font-weight: 600;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            .filter-button i {
-                margin-right: 8px;
-            }
-            
-            .filter-options {
-                display: none;
-                margin-top: 15px;
-            }
-            
-            .filter-options.show {
-                display: block;
-            }
-            
-            .filter-group {
-                margin-bottom: 15px;
-            }
-            
-            .filter-group-title {
-                font-weight: 600;
-                margin-bottom: 8px;
-                color: #333;
-            }
-            
-            .filter-option {
-                display: flex;
-                align-items: center;
-                margin-bottom: 5px;
-            }
-            
-            .filter-option input {
-                margin-right: 8px;
-            }
-        }
-
+    
+          
         </style>
     </head>
     <body>
@@ -1285,36 +1160,103 @@
                 });
         </script>
         <script>
-    document.querySelectorAll('.product-card').forEach(card => {
-  const variants = JSON.parse(card.getAttribute('data-variants') || '[]');
-  if (variants.length > 1) {
-    const swatches = card.querySelectorAll('.color-swatch');
-    const productImage = card.querySelector('.product-image img');
-    const trendyolLink = card.querySelector('.buy-button.trendyol');
-    const hepsiburadaLink = card.querySelector('.buy-button.hepsiburada');
-    const n11Link = card.querySelector('.buy-button.firiya');
-
-    swatches.forEach(swatch => {
-      swatch.addEventListener('click', () => {
-        const index = parseInt(swatch.getAttribute('data-color-index'));
-        if (variants[index]) {
-          // Resmi değiştir
-          productImage.src = variants[index].image;
-          productImage.alt = `LED Ürün - ${variants[index].colorName}`;
-
-          // Linkleri değiştir
-          trendyolLink.href = variants[index].links.trendyol;
-          hepsiburadaLink.href = variants[index].links.hepsiburada;
-          n11Link.href = variants[index].links.n11;
-
-          // Aktif swatch stilini güncelle
-          swatches.forEach(s => s.style.border = '1px solid #ccc');
-          swatch.style.border = '2px solid #6200ea';
-        }
-      });
-    });
-  }
-});
+            document.addEventListener("DOMContentLoaded", function () {
+                fetch("header.html")
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("header").innerHTML = data;
+                        console.log("Header yüklendi");
+    
+                        const bxMenu = document.querySelector('.bx-menu');
+                        const bxX = document.querySelector('.bx-x');
+                        const navBar = document.querySelector('.navbar');
+    
+                        if (bxMenu && bxX && navBar) {
+                            bxMenu.addEventListener('click', (e) => {
+                                if (e.target.classList.contains('bx-menu')) {
+                                    navBar.classList.add('show-navbar');
+                                    bxMenu.classList.add('hide-bx');
+                                    bxX.classList.add('show-bx');
+                                }
+                            });
+    
+                            bxX.addEventListener('click', (e) => {
+                                if (e.target.classList.contains('bx-x')) {
+                                    navBar.classList.remove('show-navbar');
+                                    bxMenu.classList.remove('hide-bx');
+                                    bxX.classList.remove('show-bx');
+                                }
+                            });
+                        }
+                    })
+                    .catch(error => console.error("Header yüklenirken hata oluştu:", error));
+            });
+    
+            // Footer'ı yükle
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer').innerHTML = html;
+                });
+    
+            // Renk varyantları için
+            document.querySelectorAll('.product-card').forEach(card => {
+                const variants = JSON.parse(card.getAttribute('data-variants') || '[]');
+                if (variants.length > 1) {
+                    const swatches = card.querySelectorAll('.color-swatch');
+                    const productImage = card.querySelector('.product-image img');
+                    const trendyolLink = card.querySelector('.buy-button.trendyol');
+                    const hepsiburadaLink = card.querySelector('.buy-button.hepsiburada');
+                    const n11Link = card.querySelector('.buy-button.firiya');
+    
+                    swatches.forEach(swatch => {
+                        swatch.addEventListener('click', () => {
+                            const index = parseInt(swatch.getAttribute('data-color-index'));
+                            if (variants[index]) {
+                                // Resmi değiştir
+                                productImage.src = variants[index].image;
+                                productImage.alt = `LED Ürün - ${variants[index].colorName}`;
+    
+                                // Linkleri değiştir
+                                trendyolLink.href = variants[index].links.trendyol;
+                                hepsiburadaLink.href = variants[index].links.hepsiburada;
+                                n11Link.href = variants[index].links.n11;
+    
+                                // Aktif swatch stilini güncelle
+                                swatches.forEach(s => s.style.border = '1px solid #ccc');
+                                swatch.style.border = '2px solid #6200ea';
+                            }
+                        });
+                    });
+                }
+            });
+    
+            // Dokunmatik cihazlar için overlay kontrolü
+            document.querySelectorAll('.product-card').forEach(card => {
+                let touchTimer;
+    
+                card.addEventListener('touchstart', function () {
+                    touchTimer = setTimeout(() => {
+                        this.classList.add('touch-active');
+                    }, 300); // 300ms basılı tutunca aktif olsun
+                });
+    
+                card.addEventListener('touchend', function () {
+                    clearTimeout(touchTimer);
+                });
+    
+                card.addEventListener('touchcancel', function () {
+                    clearTimeout(touchTimer);
+                    this.classList.remove('touch-active');
+                });
+    
+                // Overlay dışına tıklanınca kapat
+                document.addEventListener('touchstart', function (e) {
+                    if (!card.contains(e.target)) {
+                        card.classList.remove('touch-active');
+                    }
+                });
+            });
         </script>
     </body>
     </html>

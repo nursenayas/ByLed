@@ -16,7 +16,7 @@
 .slider-container {
     width: 100%;
     max-width: 100%;
-    height: 950px;
+    height: 850px;
     position: relative;
     overflow: hidden;
 }
@@ -335,5 +335,154 @@
         margin: 0 5px;
         cursor: pointer;
         transition: all 0.3s ease;
+    }
+}
+
+/* Yatay modda tabletler için */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .slider-container {
+        height: 800px;
+    }
+    
+    .slide-content {
+        width: 50%;
+    }
+}
+
+/* Ekstra büyük ekranlar için */
+@media (min-width: 1400px) {
+    .slider-container {
+        height: 1000px;
+    }
+    
+    .slide-content {
+        width: 45%;
+    }
+    
+    .slide-title {
+        font-size: 56px;
+    }
+    
+    .slide-description {
+        font-size: 18px;
+        max-width: 600px;
+    }
+}
+
+
+/* Çok küçük ekranlar (örneğin iPhone 5/SE) */
+@media (max-width: 320px) {
+    .slider-container {
+        height: 450px;
+    }
+    
+    .slide-title {
+        font-size: 20px;
+    }
+    
+    .slide-description {
+        font-size: 12px;
+    }
+    
+    .slide-button {
+        width: 70%;
+    }
+}
+
+/* Küçük mobil cihazlar */
+@media (max-width: 480px) {
+    .slider-container {
+        height: 500px;
+    }
+    
+    .slide-content {
+        padding: 0 20px;
+        padding-bottom: 80px;
+    }
+    
+    .slide-title {
+        font-size: 22px;
+    }
+    
+    .slide-description {
+        font-size: 13px;
+    }
+    
+    .slide-button {
+        width: 60%;
+        padding: 10px 20px;
+        font-size: 11px;
+    }
+    
+    .slider-controls {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .slider-arrow {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .slider-dot {
+        width: 8px;
+        height: 8px;
+        margin: 0 5px;
+    }
+}
+
+/* Responsive düzenlemeler - Mobil (Dikey) */
+@media (max-width: 768px) and (orientation: portrait) {
+    .slider-container {
+        height: 600px;
+        color: #c9b8a8;
+
+    }
+    
+    .slide-content {
+        width: 100%;
+        padding: 0 25px;
+        justify-content: flex-end;
+        padding-bottom: 100px;
+        background: linear-gradient(0deg, rgba(1, 1, 1, 0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    }
+    
+    .slide-image::after {
+        background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    }
+    
+    .slide-title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    
+    .slide-description {
+        font-size: 14px;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    
+    .slide-button {
+        width: 50%;
+        padding: 12px 24px;
+        font-size: 12px;
+        background: #814004;
+        color: #c9b8a8;
+    }
+    
+    .slider-controls {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .slider-dot {
+        width: 10px;
+        height: 10px;
+        margin: 0 6px;
     }
 }
